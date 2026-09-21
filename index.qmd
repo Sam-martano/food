@@ -1,0 +1,59 @@
+---
+title: "US Adult Obesity Prevalence (1999–2023)"
+author: "Sam Martano"
+format:
+  html:
+    theme: cosmo
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+This interactive visualization shows the trend in age-adjusted obesity prevalence ($\text{BMI} \ge 30$) among adults aged 20 and older in the United States from 1999 through 2023, based on data collected by the National Health and Nutrition Examination Survey (NHANES).
+
+```{r}
+library(tidyverse)
+library(plotly)
+
+# CDC NHANES age-adjusted adult obesity prevalence across survey cycles
+obesity_trends <- tibble(
+  cycle = c(
+    "1999–2000", "2001–2002", "2003–2004", "2005–2006",
+    "2007–2008", "2009–2010", "2011–2012", "2013–2014",
+    "2015–2016", "2017–2018", "2017–2020", "2021–2023"
+  ),
+  year = c(1999.5, 2001.5, 2003.5, 2005.5, 2007.5, 2009.5, 2011.5, 2013.5, 2015.5, 2017.5, 2018.5, 2022.5),
+  prevalence = c(30.5, 30.5, 32.2, 34.3, 33.7, 35.7, 34.9, 37.7, 39.6, 42.4, 41.9, 40.3)
+)
+
+# Build plot with ggplot2
+p <- ggplot(
+  obesity_trends,
+  aes(
+    x = year,
+    y = prevalence,
+    text = paste0("Cycle: ", cycle, "<br>Prevalence: ", prevalence, "%")
+  )
+) +
+  geom_line(color = "#2b6cb0", linewidth = 1) +
+  geom_point(color = "#2b6cb0", size = 2.5) +
+  scale_y_continuous(
+    labels = \(x) paste0(x, "%"),
+    limits = c(25, 45)
+  ) +
+  scale_x_continuous(
+    breaks = seq(2000, 2022, by = 4)
+  ) +
+  labs(
+    title = "Adult Obesity Rate Over Time (NHANES 1999–2023)",
+    x = "Survey Period",
+    y = "Obesity Prevalence (%)"
+  ) +
+  theme_minimal()
+
+# Convert to interactive plotly widget
+ggplotly(p, tooltip = "text")
+```
+
+Between 1999–2000 and 2017–2018, adult obesity prevalence rose steadily from 30.5% to over 42%, before leveling off near 40% in the most recent 2021–2023 cycle.
