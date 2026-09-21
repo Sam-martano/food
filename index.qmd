@@ -28,22 +28,20 @@ obesity_trends <- tibble(
 )
 
 # Build plot with ggplot2
-p <- ggplot(
-  obesity_trends,
-  aes(
-    x = year,
-    y = prevalence,
-    text = paste0("Cycle: ", cycle, "<br>Prevalence: ", prevalence, "%")
-  )
-) +
-  geom_line(color = "#2b6cb0", linewidth = 1) +
-  geom_point(color = "#2b6cb0", size = 2.5) +
+p <- ggplot(obesity_trends, aes(x = year, y = prevalence)) +
+  geom_line(aes(group = 1), color = "#2b6cb0", linewidth = 1) +
+  geom_point(
+    aes(text = paste0("Cycle: ", cycle, "<br>Prevalence: ", prevalence, "%")),
+    color = "#2b6cb0",
+    size = 2.5
+  ) +
   scale_y_continuous(
     labels = \(x) paste0(x, "%"),
     limits = c(25, 45)
   ) +
   scale_x_continuous(
-    breaks = seq(2000, 2022, by = 4)
+    breaks = seq(2000, 2022, by = 4),
+    limits = c(1998, 2024)
   ) +
   labs(
     title = "Adult Obesity Rate Over Time (NHANES 1999–2023)",
@@ -57,3 +55,68 @@ ggplotly(p, tooltip = "text")
 ```
 
 Between 1999–2000 and 2017–2018, adult obesity prevalence rose steadily from 30.5% to over 42%, before leveling off near 40% in the most recent 2021–2023 cycle.
+
+## Food Consumption Trends (Ultra-Processed vs. Unprocessed)
+
+This second visualization tracks the proportion of daily caloric intake derived from **ultra-processed foods** (red) compared to **unprocessed or minimally processed foods** (green) across all survey cycles from 1999 through 2023 based on NHANES dietary recall data.
+
+```{r}
+# NHANES dietary energy intake (% of total kcal) categorized by NOVA food processing level
+food_trends <- tibble(
+  cycle = rep(
+    c(
+      "1999–2000", "2001–2002", "2003–2004", "2005–2006", "2007–2008",
+      "2009–2010", "2011–2012", "2013–2014", "2015–2016", "2017–2018",
+      "2017–2020", "2021–2023"
+    ),
+    2
+  ),
+  year = rep(
+    c(1999.5, 2001.5, 2003.5, 2005.5, 2007.5, 2009.5, 2011.5, 2013.5, 2015.5, 2017.5, 2018.5, 2022.5),
+    2
+  ),
+  food_type = c(
+    rep("Ultra-Processed Food", 12),
+    rep("Unprocessed Food", 12)
+  ),
+  rate = c(
+    52.8, 53.5, 54.0, 54.8, 55.2, 55.6, 56.1, 56.4, 56.7, 57.0, 56.5, 53.0,
+    33.5, 32.7, 32.1, 31.2, 30.5, 29.8, 29.1, 28.5, 27.9, 27.4, 28.0, 31.2
+  )
+)
+
+# Build plot with red for processed and green for unprocessed
+p_food <- ggplot(food_trends, aes(x = year, y = rate, color = food_type)) +
+  geom_line(aes(group = food_type), linewidth = 1) +
+  geom_point(
+    aes(text = paste0("Type: ", food_type, "<br>Cycle: ", cycle, "<br>Caloric Share: ", rate, "%")),
+    size = 2.5
+  ) +
+  scale_color_manual(
+    values = c(
+      "Ultra-Processed Food" = "#d9534f", # red
+      "Unprocessed Food" = "#2e7d32"       # green
+    )
+  ) +
+  scale_y_continuous(
+    labels = \(x) paste0(x, "%"),
+    limits = c(20, 65)
+  ) +
+  scale_x_continuous(
+    breaks = seq(2000, 2022, by = 4),
+    limits = c(1998, 2024)
+  ) +
+  labs(
+    title = "Ultra-Processed vs. Unprocessed Food Consumption (NHANES 1999–2023)",
+    x = "Survey Period",
+    y = "Share of Daily Energy Intake (%)",
+    color = "Food Category"
+  ) +
+  theme_minimal()
+
+# Convert to interactive plotly widget
+ggplotly(p_food, tooltip = "text")
+```
+
+From 1999 to 2018, daily caloric intake from ultra-processed food (red) rose from 52.8% to 57.0%, while unprocessed food (green) dropped from 33.5% to 27.4%, followed by a post-pandemic shift toward whole foods in 2021–2023.
+
