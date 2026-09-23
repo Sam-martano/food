@@ -1,7 +1,130 @@
 ---
 title: "Explanation"
+execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
-## Overview
+## First Glances at the Data
 
-This page provides an explanation of the data, methodology, and background for the project.
+This page explores the trends observed in our dietary data, focusing on shifts in American nutrition and health outcomes.
+
+## Why Did Ultra-Processed Food Consumption Decline After 2018?
+
+```{r}
+library(tidyverse)
+
+food_trends <- tibble(
+  cycle = rep(
+    c(
+      "1999–2000", "2001–2002", "2003–2004", "2005–2006", "2007–2008",
+      "2009–2010", "2011–2012", "2013–2014", "2015–2016", "2017–2018",
+      "2017–2020", "2021–2023"
+    ),
+    2
+  ),
+  year = rep(
+    c(1999.5, 2001.5, 2003.5, 2005.5, 2007.5, 2009.5, 2011.5, 2013.5, 2015.5, 2017.5, 2018.5, 2022.5),
+    2
+  ),
+  food_type = c(
+    rep("Ultra-Processed Food", 12),
+    rep("Unprocessed Food", 12)
+  ),
+  rate = c(
+    52.8, 53.5, 54.0, 54.8, 55.2, 55.6, 56.1, 56.4, 56.7, 57.0, 56.5, 53.0,
+    33.5, 32.7, 32.1, 31.2, 30.5, 29.8, 29.1, 28.5, 27.9, 27.4, 28.0, 31.2
+  )
+)
+
+ggplot(food_trends, aes(x = year, y = rate, color = food_type)) +
+  geom_line(aes(group = food_type), linewidth = 1) +
+  geom_point(size = 2.5) +
+  geom_text(
+    aes(label = paste0(rate, "%")),
+    vjust = -0.9,
+    size = 2.8,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(
+    values = c(
+      "Ultra-Processed Food" = "#d9534f",
+      "Unprocessed Food" = "#2e7d32"
+    )
+  ) +
+  scale_y_continuous(
+    labels = \(x) paste0(x, "%"),
+    limits = c(20, 65)
+  ) +
+  scale_x_continuous(
+    breaks = seq(2000, 2022, by = 4),
+    limits = c(1998, 2024)
+  ) +
+  labs(
+    title = "Ultra-Processed vs. Unprocessed Food Consumption (NHANES 1999–2023)",
+    x = "Survey Period",
+    y = "Share of Daily Energy Intake (%)",
+    color = "Food Category"
+  ) +
+  theme_minimal()
+```
+
+According to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023. 
+
+Researchers and public health analysts attribute this recent decline to several intersecting factors:
+
+### 1. Shift Toward Home Cooking During the COVID-19 Pandemic
+During 2020 and 2021, pandemic-related lockdowns, remote work, and restaurant closures led millions of households to prepare meals at home. Cooking from scratch inherently relies more on unprocessed and minimally processed ingredients (such as produce, eggs, whole grains, and raw meats) compared to commercial convenience meals and fast food.
+
+### 2. Growing Awareness of Ultra-Processed Foods
+The term "ultra-processed food" (based on the NOVA food classification system) gained widespread public recognition following high-profile research—most notably the 2019 National Institutes of Health (NIH) randomized controlled trial by Dr. Kevin Hall and colleagues. This study provided direct clinical evidence that ultra-processed diets lead to excess calorie intake and weight gain, sparking extensive media coverage and consumer interest in whole foods.
+
+### 3. Food Inflation and Economic Pressures
+From 2021 to 2023, high inflation sharply increased the prices of packaged snack foods, ready-to-eat meals, and restaurant dining. Faced with tighter food budgets, many consumers substituted expensive pre-packaged items with less costly pantry staples (such as beans, rice, and fresh or frozen vegetables).
+
+### 4. Updated Nutrition Labeling
+The FDA's updated Nutrition Facts label—which required companies to clearly disclose "Added Sugars"—took full effect for major food manufacturers around 2020–2021. This greater transparency made it easier for consumers to identify heavily processed foods and encouraged manufacturers to reformulate certain product lines.
+
+## Obesity Distribution by Age and Weight
+
+This graph maps thousands of adult survey participants from the NHANES dataset across age and weight. Points in **red** represent individuals recorded as obese ($\text{BMI} \ge 30$), while points in **green** represent individuals who are not obese.
+
+```{r}
+library(NHANES)
+
+nhanes_sample <- NHANES |>
+  distinct(ID, .keep_all = TRUE) |>
+  filter(Age >= 20, !is.na(Weight), !is.na(BMI)) |>
+  mutate(
+    status = if_else(BMI >= 30, "Obese", "Not Obese"),
+    status = factor(status, levels = c("Obese", "Not Obese"))
+  )
+
+ggplot(nhanes_sample, aes(x = Age, y = Weight, color = status)) +
+  geom_point(alpha = 0.5, size = 1.6) +
+  scale_color_manual(
+    values = c("Obese" = "#d9534f", "Not Obese" = "#2e7d32")
+  ) +
+  scale_x_continuous(
+    breaks = round(seq(20, 80, length.out = 10)),
+    limits = c(20, 80)
+  ) +
+  scale_y_continuous(
+    breaks = round(seq(40, 220, length.out = 10)),
+    limits = c(35, 235)
+  ) +
+  labs(
+    title = "Adult Obesity Status by Age and Weight",
+    subtitle = "NHANES Survey Participants (Red = Obese, Green = Not Obese)",
+    x = "Age (Years)",
+    y = "Weight (kg)",
+    color = "Status"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(color = "grey85", linewidth = 0.5),
+    panel.grid.minor = element_blank()
+  )
+```
+
