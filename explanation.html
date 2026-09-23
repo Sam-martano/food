@@ -138,9 +138,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This page provides an explanation of the data, methodology, and background for the project.</p>
+<p>This page explores the trends observed in our dietary data, focusing on shifts in American nutrition and health outcomes.</p>
+</section>
+<section id="why-did-ultra-processed-food-consumption-decline-after-2018" class="level2">
+<h2 class="anchored" data-anchor-id="why-did-ultra-processed-food-consumption-decline-after-2018">Why Did Ultra-Processed Food Consumption Decline After 2018?</h2>
+<p>According to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023.</p>
+<p>Researchers and public health analysts attribute this recent decline to several intersecting factors:</p>
+<section id="shift-toward-home-cooking-during-the-covid-19-pandemic" class="level3">
+<h3 class="anchored" data-anchor-id="shift-toward-home-cooking-during-the-covid-19-pandemic">1. Shift Toward Home Cooking During the COVID-19 Pandemic</h3>
+<p>During 2020 and 2021, pandemic-related lockdowns, remote work, and restaurant closures led millions of households to prepare meals at home. Cooking from scratch inherently relies more on unprocessed and minimally processed ingredients (such as produce, eggs, whole grains, and raw meats) compared to commercial convenience meals and fast food.</p>
+</section>
+<section id="growing-awareness-of-ultra-processed-foods" class="level3">
+<h3 class="anchored" data-anchor-id="growing-awareness-of-ultra-processed-foods">2. Growing Awareness of Ultra-Processed Foods</h3>
+<p>The term “ultra-processed food” (based on the NOVA food classification system) gained widespread public recognition following high-profile research—most notably the 2019 National Institutes of Health (NIH) randomized controlled trial by Dr.&nbsp;Kevin Hall and colleagues. This study provided direct clinical evidence that ultra-processed diets lead to excess calorie intake and weight gain, sparking extensive media coverage and consumer interest in whole foods.</p>
+</section>
+<section id="food-inflation-and-economic-pressures" class="level3">
+<h3 class="anchored" data-anchor-id="food-inflation-and-economic-pressures">3. Food Inflation and Economic Pressures</h3>
+<p>From 2021 to 2023, high inflation sharply increased the prices of packaged snack foods, ready-to-eat meals, and restaurant dining. Faced with tighter food budgets, many consumers substituted expensive pre-packaged items with less costly pantry staples (such as beans, rice, and fresh or frozen vegetables).</p>
+</section>
+<section id="updated-nutrition-labeling" class="level3">
+<h3 class="anchored" data-anchor-id="updated-nutrition-labeling">4. Updated Nutrition Labeling</h3>
+<p>The FDA’s updated Nutrition Facts label—which required companies to clearly disclose “Added Sugars”—took full effect for major food manufacturers around 2020–2021. This greater transparency made it easier for consumers to identify heavily processed foods and encouraged manufacturers to reformulate certain product lines.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -217,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/Sam-martano\.github\.io\/food\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
