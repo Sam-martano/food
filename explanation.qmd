@@ -1,0 +1,7 @@
+---
+title: "Explanation"
+---
+
+## Overview
+
+This page provides an explanation of the data, methodology, and background for the project.

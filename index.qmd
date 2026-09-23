@@ -134,10 +134,25 @@ ggplotly(p_chronic, tooltip = "text")
 
 ### About These Diseases and Their Links to Food
 
-- **Hypertension (High Blood Pressure):** Defined as blood pressure $\ge 130/80\text{ mmHg}$ or taking blood pressure medication. Excessive sodium (salt) from processed and restaurant foods, combined with diets low in potassium and magnesium from fresh fruits and vegetables, is a key driver.
-- **Metabolic Syndrome:** A cluster of at least three concurrent cardiometabolic risk factors: abdominal obesity (large waist circumference), high triglycerides, low HDL ("good") cholesterol, high blood pressure, and elevated fasting blood glucose. Heavily promoted by diets high in ultra-processed foods and refined carbohydrates.
-- **High Total Cholesterol (Hypercholesterolemia):** Defined as blood total cholesterol $\ge 240\text{ mg/dL}$. Elevated by diets high in saturated fats and industrial trans fats. Its long-term decline over this period is largely credited to widespread clinical screening and statin medication use.
-- **Diabetes (Total Type 2 & Type 1):** Defined by elevated blood glucose ($\text{HbA1c} \ge 6.5\%$ or fasting glucose $\ge 126\text{ mg/dL}$), with Type 2 accounting for over 90% of cases. Strongly linked to sugar-sweetened beverages, ultra-processed food intake, and excess caloric consumption that lead to insulin resistance.
+::: {.callout-note collapse="true" icon=false}
+## Hypertension (High Blood Pressure)
+Defined as blood pressure $\ge 130/80\text{ mmHg}$ or taking blood pressure medication. Excessive sodium (salt) from processed and restaurant foods, combined with diets low in potassium and magnesium from fresh fruits and vegetables, is a key driver.
+:::
+
+::: {.callout-note collapse="true" icon=false}
+## Metabolic Syndrome
+A cluster of at least three concurrent cardiometabolic risk factors: abdominal obesity (large waist circumference), high triglycerides, low HDL ("good") cholesterol, high blood pressure, and elevated fasting blood glucose. Heavily promoted by diets high in ultra-processed foods and refined carbohydrates.
+:::
+
+::: {.callout-note collapse="true" icon=false}
+## High Total Cholesterol (Hypercholesterolemia)
+Defined as blood total cholesterol $\ge 240\text{ mg/dL}$. Elevated by diets high in saturated fats and industrial trans fats. Its long-term decline over this period is largely credited to widespread clinical screening and statin medication use.
+:::
+
+::: {.callout-note collapse="true" icon=false}
+## Diabetes (Total Type 2 & Type 1)
+Defined by elevated blood glucose ($\text{HbA1c} \ge 6.5\%$ or fasting glucose $\ge 126\text{ mg/dL}$), with Type 2 accounting for over 90% of cases. Strongly linked to sugar-sweetened beverages, ultra-processed food intake, and excess caloric consumption that lead to insulin resistance.
+:::
 
 :::
 

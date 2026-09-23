@@ -3,6 +3,12 @@ project:
 
 website:
   title: "NHANES Obesity Trends"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: explanation.qmd
+        text: Explanation
 
 format:
   html:
