@@ -1,0 +1,15 @@
+---
+title: "About"
+---
+
+## About the Author
+
+* **Name:** Samuel Sammartano
+* **Email:** [Samuelsammartano2@gmail.com](mailto:Samuelsammartano2@gmail.com)
+* **GitHub:** [github.com/Sam-martano](https://github.com/Sam-martano)
+* **Project Repository:** [github.com/Sam-martano/food](https://github.com/Sam-martano/food)
+* **Institution:** [New College of Florida](https://www.ncf.edu)
+
+## Data Sources
+
+This project analyzes dietary patterns and health metrics using continuous survey data from the [National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm) conducted by the CDC's National Center for Health Statistics, alongside annual sweetener delivery datasets from the [USDA Economic Research Service (ERS)](https://www.ers.usda.gov/data-products/sugar-and-sweeteners-yearbook-tables/). Detailed macronutrient quality and fat subtype trends across 1999–2023 were evaluated using NHANES 24-hour dietary recalls from the [USDA What We Eat in America (WWEIA)](https://www.ars.usda.gov/northeast-area/beltsville-md-bhnrc/beltsville-human-nutrition-research-center/food-surveys-research-group/) dietary assessment protocol and public health methodology established in [*JAMA* (Shan et al., 2019)](https://jamanetwork.com/journals/jama/fullarticle/2751515).
