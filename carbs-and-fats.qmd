@@ -1,0 +1,96 @@
+---
+title: "Carbs and Fats"
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+## Carbohydrate Quality: Refined vs. Unrefined (1999–2016)
+
+In nutritional epidemiology, carbohydrates are evaluated by their quality:
+
+* **Low-Quality / Refined Carbohydrates:** Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.
+* **High-Quality / Unrefined Carbohydrates:** Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.
+
+The visualization below uses data from nine cycles of the **National Health and Nutrition Examination Survey (NHANES)** published in [*JAMA*](https://doi.org/10.1001/jama.2019.13776), tracking how adult intake has shifted as a share of daily calories.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 6
+library(tidyverse)
+
+# NHANES dietary recall trends (Shan et al., JAMA 2019)
+carb_trends <- tibble(
+  cycle = rep(
+    c(
+      "1999–2000", "2001–2002", "2003–2004", "2005–2006", "2007–2008",
+      "2009–2010", "2011–2012", "2013–2014", "2015–2016"
+    ),
+    2
+  ),
+  year = rep(c(1999.5, 2001.5, 2003.5, 2005.5, 2007.5, 2009.5, 2011.5, 2013.5, 2015.5), 2),
+  carb_type = c(
+    rep("Low-Quality / Refined Carbs", 9),
+    rep("High-Quality / Unrefined Carbs", 9)
+  ),
+  pct_energy = c(
+    45.1, 44.7, 44.2, 43.6, 43.1, 42.6, 42.3, 42.0, 41.8,
+    7.4, 7.6, 7.7, 7.9, 8.0, 8.2, 8.4, 8.5, 8.7
+  )
+)
+
+ggplot(carb_trends, aes(x = year, y = pct_energy, color = carb_type)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 3) +
+  # Direct percentage labels above/below each point
+  geom_label(
+    aes(label = sprintf("%.1f%%", pct_energy)),
+    vjust = if_else(carb_trends$carb_type == "Low-Quality / Refined Carbs", -0.5, 1.5),
+    size = 3.2,
+    fontface = "bold",
+    fill = "white",
+    linewidth = 0.25,
+    show.legend = FALSE
+  ) +
+  scale_color_manual(
+    values = c(
+      "Low-Quality / Refined Carbs" = "#d9534f",
+      "High-Quality / Unrefined Carbs" = "#2e7d32"
+    )
+  ) +
+  scale_y_continuous(
+    labels = \(x) paste0(x, "%"),
+    limits = c(3, 50),
+    breaks = seq(5, 50, by = 5)
+  ) +
+  scale_x_continuous(
+    breaks = unique(carb_trends$year),
+    labels = c(
+      "1999–\n2000", "2001–\n2002", "2003–\n2004", "2005–\n2006", "2007–\n2008",
+      "2009–\n2010", "2011–\n2012", "2013–\n2014", "2015–\n2016"
+    )
+  ) +
+  labs(
+    title = "Trends in Carbohydrate Quality Among U.S. Adults (1999–2016)",
+    subtitle = "Low-quality carbs fell slightly but still dominate total energy intake by ~5-to-1 over high-quality carbs",
+    x = "NHANES Survey Period",
+    y = "Share of Daily Energy Intake (%)",
+    color = "Carbohydrate Type",
+    caption = "Source: NHANES dietary recall data, Shan et al. (JAMA 2019)"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    plot.title = element_text(face = "bold", size = 13),
+    plot.subtitle = element_text(color = "gray30", size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "grey90", linewidth = 0.5)
+  )
+```
+
+## Key Insights
+
+1. **Persistent Imbalance:** Even with a modest decline in added sugars, low-quality refined carbohydrates still account for over **40% of daily calories**, whereas unrefined, high-quality carbohydrates make up under **9%**.
+2. **The Whole-Grain Deficit:** Within high-quality carbohydrates, energy intake from whole grains rose from **2.0% to 2.7%**, meaning that the overwhelming majority of grain foods consumed in the United States remain refined white flours.
+3. **Implications for Metabolic Health:** Because refined carbs digest quickly and produce elevated glycemic responses, their dominance in the American diet continues to drive insulin resistance and excess energy intake.

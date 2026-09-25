@@ -38,13 +38,19 @@ food_trends <- tibble(
   )
 )
 
+# Key milestone points: 1999 start, 2017-2018 peak, and 2021-2023 latest
+key_points <- food_trends |>
+  filter(year %in% c(1999.5, 2017.5, 2022.5))
+
 ggplot(food_trends, aes(x = year, y = rate, color = food_type)) +
-  geom_line(aes(group = food_type), linewidth = 1) +
+  geom_line(aes(group = food_type), linewidth = 1.1) +
   geom_point(size = 2.5) +
   geom_text(
-    aes(label = paste0(rate, "%")),
-    vjust = -0.9,
-    size = 2.8,
+    data = key_points,
+    aes(label = sprintf("%.1f%%", rate)),
+    vjust = if_else(key_points$food_type == "Ultra-Processed Food", -1.2, 1.8),
+    size = 3.3,
+    fontface = "bold",
     show.legend = FALSE
   ) +
   scale_color_manual(
@@ -55,19 +61,28 @@ ggplot(food_trends, aes(x = year, y = rate, color = food_type)) +
   ) +
   scale_y_continuous(
     labels = \(x) paste0(x, "%"),
-    limits = c(20, 65)
+    limits = c(22, 63),
+    breaks = seq(25, 60, by = 5)
   ) +
   scale_x_continuous(
     breaks = seq(2000, 2022, by = 4),
     limits = c(1998, 2024)
   ) +
   labs(
-    title = "Ultra-Processed vs. Unprocessed Food Consumption (NHANES 1999–2023)",
+    title = "Ultra-Processed vs. Unprocessed Food Consumption",
+    subtitle = "NHANES 1999–2023 (Share of Daily Caloric Intake)",
     x = "Survey Period",
-    y = "Share of Daily Energy Intake (%)",
+    y = "Daily Energy Intake (%)",
     color = "Food Category"
   ) +
-  theme_minimal()
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "top",
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(color = "grey90", linewidth = 0.5),
+    plot.title = element_text(face = "bold", size = 13),
+    plot.subtitle = element_text(color = "grey35")
+  )
 ```
 
 According to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023. 

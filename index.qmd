@@ -14,9 +14,55 @@ execute:
 #| include: false
 library(tidyverse)
 library(plotly)
+library(NHANES)
 ```
 
+Diet and nutrition play a central role in determining long-term health outcomes. When diets are heavily reliant on ultra-processed foods—which are often high in added sugars, unhealthy fats, and sodium—they contribute to excess weight gain and substantially elevate the risk of chronic conditions such as type 2 diabetes and hypertension. Conversely, diets rich in whole, minimally processed foods provide essential nutrients and fiber that support a healthy weight and protect metabolic function. The visualizations below draw on data from the National Health and Nutrition Examination Survey (NHANES) to examine how changes in American dietary habits connect to trends in body mass index (BMI), adult obesity, and chronic disease over the last two decades.
+
 ::: {.panel-tabset}
+
+## Adult BMI by Height and Weight
+
+This visualization maps adult survey participants from the NHANES dataset across height and weight. Points in **green** indicate a healthy weight ($\text{BMI} < 25$), while points in **red** indicate overweight or obesity ($\text{BMI} \ge 25$).
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+# Filter adult participants with recorded measurements, removing extreme outliers
+nhanes_bmi <- NHANES |>
+  distinct(ID, .keep_all = TRUE) |>
+  filter(Age >= 20, !is.na(Height), !is.na(Weight), !is.na(BMI)) |>
+  mutate(
+    height_in = Height / 2.54,
+    weight_lbs = Weight * 2.20462,
+    status = if_else(BMI >= 25, "Overweight or Obese", "Healthy"),
+    status = factor(status, levels = c("Healthy", "Overweight or Obese"))
+  ) |>
+  filter(height_in >= 55, height_in <= 78, weight_lbs <= 350)
+
+# Scatter plot of height vs. weight colored by BMI status
+ggplot(nhanes_bmi, aes(x = height_in, y = weight_lbs, color = status)) +
+  geom_point(alpha = 0.45, size = 1.8) +
+  scale_color_manual(
+    values = c(
+      "Healthy" = "#2e7d32",
+      "Overweight or Obese" = "#d9534f"
+    )
+  ) +
+  labs(
+    title = "Adult Body Mass Index (BMI) by Height and Weight",
+    subtitle = "NHANES Survey Participants (Green = Healthy, Red = Overweight or Obese)",
+    x = "Height (inches)",
+    y = "Weight (lbs)",
+    color = "BMI Status"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_line(color = "grey85", linewidth = 0.5),
+    panel.grid.minor = element_blank()
+  )
+```
+
 
 ## US Adult Obesity Prevalence (1999–2023)
 

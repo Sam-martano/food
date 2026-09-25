@@ -1,0 +1,85 @@
+---
+title: "Sugar"
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+## Trends in U.S. Sweetener Consumption (1999–2023)
+
+Data from the **USDA Economic Research Service (ERS) Sugar and Sweeteners Yearbook** tracks how caloric sweetener availability per person has shifted over the last two decades. While total consumption peaked around 1999, high-fructose corn syrup (HFCS) saw a steady drop, whereas refined cane and beet sugar remained relatively flat.
+
+```{r}
+#| fig-width: 9
+#| fig-height: 5.5
+library(tidyverse)
+
+# Per capita sweetener deliveries in pounds (dry basis) from USDA ERS Table 50
+sweetener_trends <- tibble(
+  year = rep(1999:2023, 3),
+  sweetener = factor(
+    rep(
+      c("High-Fructose Corn Syrup", "Refined Cane & Beet Sugar", "Total Caloric Sweeteners"),
+      each = 25
+    ),
+    levels = c("Total Caloric Sweeteners", "Refined Cane & Beet Sugar", "High-Fructose Corn Syrup")
+  ),
+  pounds = c(
+    # High-Fructose Corn Syrup (HFCS)
+    65.9, 64.4, 63.9, 64.3, 62.6, 61.6, 61.0, 60.2, 57.9, 54.6, 51.9, 50.6, 48.6,
+    47.7, 45.7, 45.9, 44.6, 43.3, 42.1, 40.8, 39.8, 40.0, 39.5, 39.2, 37.6,
+    # Refined cane and beet sugar
+    66.4, 65.6, 64.5, 63.3, 61.0, 61.7, 63.1, 62.2, 61.3, 65.2, 63.5, 66.0, 65.9,
+    66.6, 67.9, 68.3, 68.8, 69.3, 68.8, 68.1, 67.8, 68.3, 69.7, 69.3, 68.4,
+    # Total caloric sweeteners
+    153.7, 150.9, 149.1, 148.4, 143.7, 143.8, 144.3, 141.1, 137.5, 137.6, 132.6,
+    133.9, 131.4, 131.3, 130.2, 131.5, 130.9, 129.8, 129.2, 127.2, 125.8, 126.3,
+    127.5, 126.6, 123.2
+  )
+)
+
+# Plot trend lines for each sweetener category
+ggplot(sweetener_trends, aes(x = year, y = pounds, color = sweetener, linetype = sweetener)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  scale_color_manual(
+    values = c(
+      "Total Caloric Sweeteners" = "#2c3e50",
+      "Refined Cane & Beet Sugar" = "#e67e22",
+      "High-Fructose Corn Syrup" = "#e74c3c"
+    )
+  ) +
+  scale_linetype_manual(
+    values = c(
+      "Total Caloric Sweeteners" = "dashed",
+      "Refined Cane & Beet Sugar" = "solid",
+      "High-Fructose Corn Syrup" = "solid"
+    )
+  ) +
+  scale_x_continuous(breaks = seq(2000, 2023, by = 4)) +
+  labs(
+    title = "U.S. Per Capita Caloric Sweetener Deliveries (1999–2023)",
+    subtitle = "Decline in high-fructose corn syrup drove the overall sweetener drop; refined sugar stayed flat",
+    x = "Year",
+    y = "Pounds per Person (Dry Basis)",
+    color = "Sweetener Type",
+    linetype = "Sweetener Type",
+    caption = "Source: USDA Economic Research Service (ERS) Sugar and Sweeteners Yearbook"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold", size = 13),
+    plot.subtitle = element_text(color = "gray30", size = 10)
+  )
+```
+
+## The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?
+
+If caloric sweetener intake has fallen since 1999, why have U.S. rates of adult obesity and type 2 diabetes continued to climb? Public health researchers and epidemiologists point to several key factors:
+
+1. **Total Caloric Intake & Ultra-Processed Foods:** While Americans cut back on sugary drinks, those calories were largely replaced by refined carbohydrates and fats from ultra-processed snacks, fast food, and prepared meals.
+2. **Baseline Sugar Intake Is Still Too High:** Although per capita sweetener availability dropped from 154 to 123 pounds per year, this still translates to roughly 17 teaspoons of added sugar per day—nearly double the American Heart Association's recommended upper limit of 6 to 9 teaspoons.
+3. **The Cumulative "Lag Effect":** Chronic conditions like insulin resistance and type 2 diabetes develop over decades of metabolic strain. Reductions in sweetener consumption today will take years or decades to show up as lower disease prevalence in adult populations.
+4. **Declines in Daily Physical Activity:** More desk-bound occupations, increased screen time, and car-dependent infrastructure have lowered average daily energy expenditure.

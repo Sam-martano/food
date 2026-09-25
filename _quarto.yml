@@ -9,6 +9,10 @@ website:
         text: Home
       - href: explanation.qmd
         text: Explanation
+      - href: sugar.qmd
+        text: Sugar
+      - href: carbs-and-fats.qmd
+        text: Carbs and Fats
 
 format:
   html:
