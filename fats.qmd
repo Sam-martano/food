@@ -168,35 +168,39 @@ ggplot(fat_annual, aes(x = year, y = pct_energy, color = fat_type)) +
 
 ## Saturated Fat (SFA)
 
-Saturated fats remain solid at room temperature and have historically been targeted by nutritional guidance due to their effect on raising LDL ("bad") cholesterol.
+Saturated fats remain solid at room temperature and have historically been targeted by nutritional guidance due to their impact on blood lipids.
 
-* **Primary Sources:** Fatty cuts of beef and pork, cheese, whole milk, butter, ice cream, cured meats (sausage, bacon), and palm oil in processed snacks.
-* **Healthy Guideline:** Limit to **<10%** of total daily calories (or <6% for individuals with elevated cardiovascular risk).
-* **Current Intake vs. Guideline:** American intake has hovered stubbornly around **11.5%–11.9%**, consistently exceeding the recommended healthy ceiling.
+* **Primary Sources:** Fatty cuts of beef and pork, cheese, whole milk, butter, ice cream, cured meats (sausage, bacon), and palm/coconut oil.
+* **Healthy Guideline:** Limit to **<10%** of total daily calories (<6% for individuals with elevated cardiovascular risk).
+* **Benefits When Consumed Properly:** Supplies stable fatty acids for cell membrane structure, supports steroid hormone production, and assists the absorption of fat-soluble vitamins (A, D, E, K).
+* **Unhealthy Effects of Overconsumption:** Directly increases low-density lipoprotein (LDL) cholesterol particles, accelerating arterial plaque accumulation (atherosclerosis) and raising the risk of heart disease and stroke.
 
 ## Monounsaturated Fat (MUFA)
 
-Monounsaturated fats are typically liquid at room temperature and semi-solid when refrigerated. They are widely considered heart-healthy.
+Monounsaturated fats are typically liquid at room temperature and semi-solid when refrigerated. They are widely regarded as a cornerstone of heart-healthy diets.
 
-* **Primary Sources:** Olive oil, canola oil, avocados, almonds, peanuts, cashews, and peanut butter.
-* **Healthy Guideline:** Target **15% to 20%** of daily calories (≥15%), serving as the primary dietary fat source in heart-healthy eating patterns like the Mediterranean diet.
-* **Current Intake vs. Guideline:** Intake has stayed steady at **~13.0%–13.1%**, slightly below the optimal target zone.
+* **Primary Sources:** Extra virgin olive oil, canola oil, avocados, almonds, peanuts, cashews, and peanut butter.
+* **Healthy Guideline:** Target **15% to 20%** of daily calories (≥15%), serving as the primary source of dietary fat.
+* **Benefits When Consumed Properly:** Helps reduce harmful LDL cholesterol while preserving protective HDL cholesterol, enhances insulin sensitivity, and provides antioxidants like vitamin E that dampen vascular inflammation.
+* **Unhealthy Effects of Overconsumption:** Because all fats supply 9 calories per gram, consuming MUFAs far beyond caloric needs causes unintended weight gain and associated metabolic strain.
 
 ## Polyunsaturated Fat (PUFA)
 
-Polyunsaturated fats include essential fatty acids that the human body cannot produce on its own: omega-3s and omega-6s.
+Polyunsaturated fats contain two or more double bonds and include essential fatty acids that the body cannot synthesize on its own.
 
-* **Primary Sources:** Soybean oil, corn oil, sunflower oil, walnuts, chia seeds, flaxseed, and fatty fish (salmon, mackerel, sardines).
+* **Primary Sources:** Fatty fish (salmon, mackerel, sardines), walnuts, flaxseed, chia seeds, and vegetable oils (soybean, sunflower, corn).
 * **Healthy Guideline:** Target **5% to 10%** of daily calories (with a balanced ratio between omega-3 and omega-6 fatty acids).
-* **Current Intake vs. Guideline:** Intake rose from **7.6% to 8.4%**, fitting well within the recommended 5%–10% window, largely driven by the growth of commercial vegetable oils.
+* **Benefits When Consumed Properly:** Delivers essential omega-3 and omega-6 fatty acids critical for brain development, cell membrane flexibility, blood clotting control, and lower cardiovascular mortality when replacing saturated fat.
+* **Unhealthy Effects of Overconsumption:** An excessive intake—especially of refined omega-6 seed oils out of proportion to omega-3s—can promote oxidative stress and systemic inflammatory signaling, alongside excess calorie intake.
 
 ## Trans Fat
 
-Industrial trans fats are formed when hydrogen is bubbled through vegetable oil (partial hydrogenation) to create a cheap, shelf-stable solid fat.
+Industrial trans fats are manufactured by bubbling hydrogen gas through liquid vegetable oil to produce a cheap, shelf-stable solid fat.
 
-* **Historical Sources:** Commercial margarine, vegetable shortening, deep-fried fast food, microwave popcorn, and packaged baked goods (cookies, frostings, pies).
-* **Healthy Guideline:** Limit to **<1%** of daily calories (ideally as close to **0%** as practically possible).
-* **Current Intake vs. Guideline:** Intake dropped dramatically from **2.6% down to 0.3%**, successfully meeting the public health target following mandatory labeling and FDA bans.
+* **Historical Sources:** Commercial margarine, vegetable shortening, deep-fried fast food, microwave popcorn, and commercial frostings/pastries.
+* **Healthy Guideline:** Limit to **<1%** of daily calories (as close to **0%** as practically possible).
+* **Benefits When Consumed Properly:** Industrial trans fats offer **no physiological or nutritional benefit** at any intake level.
+* **Unhealthy Effects of Overconsumption:** Highly toxic to the cardiovascular system; even small amounts simultaneously elevate LDL ("bad") cholesterol, depress HDL ("good") cholesterol, provoke endothelial inflammation, and sharply increase heart attack risk.
 
 :::
 
