@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -217,8 +246,70 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Room for MUFA Growth:</strong> Health-promoting monounsaturated fats remain at ~13%, below the optimal target of ≥15%.</li>
 <li><strong>PUFAs Within Target:</strong> Polyunsaturated fats have expanded to 8.4%, remaining within the recommended 5%–10% AMDR window.</li>
 </ol>
+</section>
+<section id="understanding-blood-lipids-ldl-vs.-hdl" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-blood-lipids-ldl-vs.-hdl">Understanding Blood Lipids: LDL vs.&nbsp;HDL</h2>
+<p>Because cholesterol is a fat-based molecule, it cannot dissolve in water-based bloodstream fluids on its own. To circulate, it must be packaged into spherical transport capsules made of lipids and proteins called <strong>lipoproteins</strong>.</p>
+<section id="ldl-low-density-lipoprotein-bad-cholesterol" class="level3">
+<h3 class="anchored" data-anchor-id="ldl-low-density-lipoprotein-bad-cholesterol">LDL: Low-Density Lipoprotein (“Bad” Cholesterol)</h3>
+<ul>
+<li><strong>Biological Function:</strong> LDL functions as a delivery vehicle, transporting cholesterol from the liver outward to peripheral cells throughout the body for membrane repair and steroid hormone production.</li>
+<li><strong>Why It Is Considered “Bad”:</strong> When LDL concentrations become excessively high, surplus particles linger in circulation and penetrate the endothelium (inner lining) of arteries. There, they oxidize, prompting immune cells to engulf them and transform into fatty foam cells. Over decades, this process forms hardened atherosclerotic plaques, narrowing arteries and dramatically raising the risk of heart attacks and strokes.</li>
+</ul>
+</section>
+<section id="hdl-high-density-lipoprotein-good-cholesterol" class="level3">
+<h3 class="anchored" data-anchor-id="hdl-high-density-lipoprotein-good-cholesterol">HDL: High-Density Lipoprotein (“Good” Cholesterol)</h3>
+<ul>
+<li><strong>Biological Function:</strong> HDL acts as the body’s cardiovascular maintenance crew through a mechanism known as <strong>reverse cholesterol transport</strong>. It scavenges surplus cholesterol from tissues and vessel walls and escorts it back to the liver for recycling or excretion through bile.</li>
+<li><strong>Why It Is Considered “Good”:</strong> Higher circulating HDL levels help keep arterial pathways clear of lipid deposits, provide anti-inflammatory and antioxidant defenses to blood vessel walls, and protect against cardiovascular events.</li>
+</ul>
+</section>
+<section id="key-differences-at-a-glance" class="level3">
+<h3 class="anchored" data-anchor-id="key-differences-at-a-glance">Key Differences at a Glance</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">LDL (Low-Density Lipoprotein)</th>
+<th style="text-align: left;">HDL (High-Density Lipoprotein)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Common Name</strong></td>
+<td style="text-align: left;">“Bad” cholesterol</td>
+<td style="text-align: left;">“Good” cholesterol</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Composition</strong></td>
+<td style="text-align: left;">High lipid content (~50% cholesterol, ~25% protein)</td>
+<td style="text-align: left;">High protein content (~50% protein, ~20% cholesterol)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Direction of Flow</strong></td>
+<td style="text-align: left;">Liver <span class="math inline">\(\rightarrow\)</span> Peripheral tissues and arterial walls</td>
+<td style="text-align: left;">Blood vessels and tissues <span class="math inline">\(\rightarrow\)</span> Liver (clearing excess)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Vascular Effect</strong></td>
+<td style="text-align: left;">Promotes arterial inflammation and plaque buildup</td>
+<td style="text-align: left;">Clears excess cholesterol and protects vessel lining</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Dietary Fat Impact</strong></td>
+<td style="text-align: left;">Increased by <strong>saturated</strong> and <strong>trans fats</strong></td>
+<td style="text-align: left;">Preserved/boosted by <strong>MUFAs</strong>; suppressed by <strong>trans fats</strong></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
