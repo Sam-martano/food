@@ -11,8 +11,10 @@ website:
         text: Explanation
       - href: sugar.qmd
         text: Sugar
-      - href: carbs-and-fats.qmd
-        text: Carbs and Fats
+      - href: carbs.qmd
+        text: Carbs
+      - href: fats.qmd
+        text: Fats
 
 format:
   html:
