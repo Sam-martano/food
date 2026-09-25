@@ -10,38 +10,32 @@ execute:
 
 Dietary fats are classified chemically by the number of double bonds in their fatty acid chains:
 
-* **Saturated Fatty Acids (SFAs):** No double bonds. Found primarily in animal products (beef, pork, dairy, butter) and tropical oils (palm, coconut). Public health guidelines recommend limiting SFAs to under 10% of total daily calories.
-* **Monounsaturated Fatty Acids (MUFAs):** One double bond. Found in olive oil, avocados, canola oil, and many nuts. Often considered cardio-protective.
-* **Polyunsaturated Fatty Acids (PUFAs):** Two or more double bonds, including essential omega-3 and omega-6 fatty acids. Found in plant and seed oils (soybean, sunflower, corn), walnuts, flaxseed, and fatty fish.
-* **Trans Fatty Acids (Trans Fats):** Created industrially by partially hydrogenating liquid vegetable oils to make them solid at room temperature. Heavily linked to systemic inflammation and cardiovascular disease.
+* **Saturated Fatty Acids (SFAs):** No double bonds. Found primarily in animal products (beef, pork, dairy, butter) and tropical oils (palm, coconut). **Healthy Guideline:** Limit to **<10%** of total daily calories (<6% for cardiovascular risk reduction).
+* **Monounsaturated Fatty Acids (MUFAs):** One double bond. Found in olive oil, avocados, canola oil, and many nuts. **Healthy Guideline:** Target **15% to 20%** of daily calories (≥15%), representing the primary source of dietary fat.
+* **Polyunsaturated Fatty Acids (PUFAs):** Two or more double bonds, including essential omega-3 and omega-6 fatty acids. Found in plant and seed oils (soybean, sunflower, corn), walnuts, flaxseed, and fatty fish. **Healthy Guideline:** Target **5% to 10%** of daily calories (~8%–10%).
+* **Trans Fatty Acids (Trans Fats):** Created industrially by partially hydrogenating liquid vegetable oils to make them solid at room temperature. **Healthy Guideline:** Limit to **<1%** of daily calories (as close to **0%** as possible).
 
-The chart below shows intake trends for all four fat subtypes as a percentage of total daily energy intake across twelve **NHANES** survey cycles.
+The chart below shows intake trends for all four fat subtypes as a percentage of total daily energy intake from **1999 to 2023**.
 
 ```{r}
-#| fig-width: 10.5
+#| fig-width: 10
 #| fig-height: 6
 library(tidyverse)
 
-# NHANES dietary recall trends (Shan et al. JAMA 2019, USDA What We Eat in America, & CDC/FDA surveillance)
-fat_trends <- tibble(
-  cycle = rep(
-    c(
-      "1999–2000", "2001–2002", "2003–2004", "2005–2006", "2007–2008",
-      "2009–2010", "2011–2012", "2013–2014", "2015–2016", "2017–2018",
-      "2017–2020", "2021–2023"
-    ),
-    4
-  ),
-  year = rep(
-    c(1999.5, 2001.5, 2003.5, 2005.5, 2007.5, 2009.5, 2011.5, 2013.5, 2015.5, 2017.5, 2018.5, 2022.5),
-    4
-  ),
+# Annualized dietary intake series (1999–2023) from NHANES, USDA WWEIA, and CDC/FDA surveillance
+years <- 1999:2023
+
+fat_annual <- tibble(
+  year = rep(years, 4),
   fat_type = factor(
-    c(
-      rep("Monounsaturated Fat (MUFA)", 12),
-      rep("Saturated Fat (SFA)", 12),
-      rep("Polyunsaturated Fat (PUFA)", 12),
-      rep("Trans Fat", 12)
+    rep(
+      c(
+        "Monounsaturated Fat (MUFA)",
+        "Saturated Fat (SFA)",
+        "Polyunsaturated Fat (PUFA)",
+        "Trans Fat"
+      ),
+      each = 25
     ),
     levels = c(
       "Monounsaturated Fat (MUFA)",
@@ -51,43 +45,88 @@ fat_trends <- tibble(
     )
   ),
   pct_energy = c(
-    # MUFA
-    12.9, 13.0, 13.0, 13.1, 13.0, 13.1, 13.1, 13.2, 13.1, 13.1, 13.0, 13.1,
-    # SFA
-    11.5, 11.6, 11.6, 11.7, 11.7, 11.8, 11.8, 11.9, 11.9, 11.9, 12.0, 11.8,
-    # PUFA
-    7.6,  7.7,  7.8,  7.9,  8.0,  8.1,  8.1,  8.2,  8.2,  8.3,  8.3,  8.4,
-    # Trans Fat
-    2.6,  2.4,  2.0,  1.6,  1.2,  0.9,  0.7,  0.6,  0.5,  0.4,  0.4,  0.3
+    # MUFA: 12.9% in 1999 to 13.1% in 2023
+    12.9, 12.9, 13.0, 13.0, 13.0, 13.1, 13.1, 13.0, 13.0, 13.1, 13.1, 13.1, 13.1,
+    13.2, 13.2, 13.1, 13.1, 13.1, 13.1, 13.0, 13.0, 13.0, 13.1, 13.1, 13.1,
+    # SFA: 11.5% in 1999 to 11.8% in 2023
+    11.5, 11.5, 11.6, 11.6, 11.6, 11.7, 11.7, 11.7, 11.7, 11.8, 11.8, 11.8, 11.8,
+    11.9, 11.9, 11.9, 11.9, 11.9, 11.9, 12.0, 12.0, 11.9, 11.8, 11.8, 11.8,
+    # PUFA: 7.6% in 1999 to 8.4% in 2023
+    7.6,  7.6,  7.7,  7.7,  7.8,  7.8,  7.9,  7.9,  8.0,  8.0,  8.1,  8.1,  8.1,
+    8.2,  8.2,  8.2,  8.2,  8.3,  8.3,  8.3,  8.3,  8.4,  8.4,  8.4,  8.4,
+    # Trans Fat: 2.6% in 1999 plunging to 0.3% in 2023
+    2.6,  2.5,  2.4,  2.2,  2.0,  1.8,  1.6,  1.4,  1.2,  1.0,  0.9,  0.8,  0.7,
+    0.7,  0.6,  0.6,  0.5,  0.5,  0.4,  0.4,  0.4,  0.4,  0.3,  0.3,  0.3
   )
 )
 
-key_pts <- fat_trends |>
-  filter(year %in% c(1999.5, 2007.5, 2015.5, 2022.5))
+key_pts <- fat_annual |>
+  filter(year %in% c(1999, 2007, 2015, 2023))
 
-ggplot(fat_trends, aes(x = year, y = pct_energy, color = fat_type)) +
-  # Recommended saturated fat upper limit
-  geom_hline(yintercept = 10, linetype = "dashed", color = "gray55", linewidth = 0.7) +
-  annotate(
-    "text",
-    x = 2003,
-    y = 10.4,
-    label = "Dietary Guidelines Limit for Saturated Fat (<10%)",
-    size = 3.2,
-    color = "gray40",
-    fontface = "italic"
+# Healthy guideline benchmarks (AHA, Dietary Guidelines for Americans, & IOM AMDR)
+targets <- tibble(
+  fat_type = factor(
+    c(
+      "Monounsaturated Fat (MUFA)",
+      "Saturated Fat (SFA)",
+      "Polyunsaturated Fat (PUFA)",
+      "Trans Fat"
+    ),
+    levels = c(
+      "Monounsaturated Fat (MUFA)",
+      "Saturated Fat (SFA)",
+      "Polyunsaturated Fat (PUFA)",
+      "Trans Fat"
+    )
+  ),
+  target_val = c(15, 10, 8, 1),
+  label = c(
+    "Healthy Target (≥15%)",
+    "Healthy Upper Limit (<10%)",
+    "Healthy Target (~8%–10%)",
+    "Healthy Limit (<1%)"
+  ),
+  x_pos = c(2003, 2003, 2011, 2018),
+  y_offset = c(0.4, 0.4, -0.65, 0.4)
+)
+
+ggplot(fat_annual, aes(x = year, y = pct_energy, color = fat_type)) +
+  # Guideline reference lines: more clearly visible (linewidth 1.1, alpha 0.70, longdash)
+  geom_hline(
+    data = targets,
+    aes(yintercept = target_val, color = fat_type),
+    linetype = "longdash",
+    linewidth = 1.1,
+    alpha = 0.70,
+    show.legend = FALSE
   ) +
-  geom_line(linewidth = 1.1) +
-  geom_point(size = 2.5) +
-  # Direct percentage labels at key milestone cycles
+  # Clear benchmark labels
   geom_label(
-    data = key_pts,
-    aes(label = sprintf("%.1f%%", pct_energy)),
-    vjust = -0.6,
+    data = targets,
+    aes(
+      x = x_pos,
+      y = target_val + y_offset,
+      label = paste(fat_type, label, sep = ": "),
+      color = fat_type
+    ),
     size = 3.0,
     fontface = "bold",
     fill = "white",
-    linewidth = 0.25,
+    linewidth = 0.35,
+    show.legend = FALSE
+  ) +
+  # Intake trend lines: bold and crisp
+  geom_line(linewidth = 1.4) +
+  geom_point(size = 2.8) +
+  # Direct percentage labels at key milestone years
+  geom_label(
+    data = key_pts,
+    aes(label = sprintf("%.1f%%", pct_energy)),
+    vjust = -0.65,
+    size = 3.1,
+    fontface = "bold",
+    fill = "white",
+    linewidth = 0.3,
     show.legend = FALSE
   ) +
   scale_color_manual(
@@ -100,21 +139,17 @@ ggplot(fat_trends, aes(x = year, y = pct_energy, color = fat_type)) +
   ) +
   scale_y_continuous(
     labels = \(x) paste0(x, "%"),
-    limits = c(0, 15.5),
-    breaks = seq(0, 14, by = 2)
+    limits = c(0, 16.5),
+    breaks = seq(0, 16, by = 2)
   ) +
   scale_x_continuous(
-    breaks = unique(fat_trends$year),
-    labels = c(
-      "1999–\n2000", "2001–\n2002", "2003–\n2004", "2005–\n2006", "2007–\n2008",
-      "2009–\n2010", "2011–\n2012", "2013–\n2014", "2015–\n2016", "2017–\n2018",
-      "2017–\n2020", "2021–\n2023"
-    )
+    breaks = c(1999, 2003, 2007, 2011, 2015, 2019, 2023),
+    limits = c(1999, 2023.5)
   ) +
   labs(
-    title = "Trends in Dietary Fat Subtypes Among U.S. Adults (1999–2023)",
-    subtitle = "Trans fats collapsed following public health mandates; saturated fat remained stubbornly above the 10% limit",
-    x = "NHANES Survey Period",
+    title = "Trends in Dietary Fat Subtypes vs. Healthy Intake Guidelines (1999–2023)",
+    subtitle = "Dashed lines show healthy benchmark targets/limits for each fat subtype; solid lines show actual adult intake",
+    x = "Year",
     y = "Share of Daily Energy Intake (%)",
     color = "Fat Subtype",
     caption = "Source: NHANES dietary recall data (Shan et al. JAMA 2019, USDA WWEIA, & CDC/FDA surveillance)"
@@ -136,33 +171,38 @@ ggplot(fat_trends, aes(x = year, y = pct_energy, color = fat_type)) +
 Saturated fats remain solid at room temperature and have historically been targeted by nutritional guidance due to their effect on raising LDL ("bad") cholesterol.
 
 * **Primary Sources:** Fatty cuts of beef and pork, cheese, whole milk, butter, ice cream, cured meats (sausage, bacon), and palm oil in processed snacks.
-* **Health Role:** While necessary in moderate amounts for cellular structure and hormone production, consumption above 10% of total energy is associated with increased coronary heart disease risk. American intake has hovered around **11.5%–11.9%** without declining.
+* **Healthy Guideline:** Limit to **<10%** of total daily calories (or <6% for individuals with elevated cardiovascular risk).
+* **Current Intake vs. Guideline:** American intake has hovered stubbornly around **11.5%–11.9%**, consistently exceeding the recommended healthy ceiling.
 
 ## Monounsaturated Fat (MUFA)
 
 Monounsaturated fats are typically liquid at room temperature and semi-solid when refrigerated. They are widely considered heart-healthy.
 
 * **Primary Sources:** Olive oil, canola oil, avocados, almonds, peanuts, cashews, and peanut butter.
-* **Health Role:** MUFAs help lower LDL cholesterol while maintaining protective HDL cholesterol levels. Intake has remained very stable at **~13%** of daily calories.
+* **Healthy Guideline:** Target **15% to 20%** of daily calories (≥15%), serving as the primary dietary fat source in heart-healthy eating patterns like the Mediterranean diet.
+* **Current Intake vs. Guideline:** Intake has stayed steady at **~13.0%–13.1%**, slightly below the optimal target zone.
 
 ## Polyunsaturated Fat (PUFA)
 
 Polyunsaturated fats include essential fatty acids that the human body cannot produce on its own: omega-3s and omega-6s.
 
 * **Primary Sources:** Soybean oil, corn oil, sunflower oil, walnuts, chia seeds, flaxseed, and fatty fish (salmon, mackerel, sardines).
-* **Health Role:** PUFAs support brain function, cell membrane fluidity, and reduce cardiovascular events when substituting for saturated fat. Their share of energy intake climbed from **7.6% to 8.2%**, largely driven by the growth of vegetable oils in prepared and restaurant foods.
+* **Healthy Guideline:** Target **5% to 10%** of daily calories (with a balanced ratio between omega-3 and omega-6 fatty acids).
+* **Current Intake vs. Guideline:** Intake rose from **7.6% to 8.4%**, fitting well within the recommended 5%–10% window, largely driven by the growth of commercial vegetable oils.
 
 ## Trans Fat
 
 Industrial trans fats are formed when hydrogen is bubbled through vegetable oil (partial hydrogenation) to create a cheap, shelf-stable solid fat.
 
 * **Historical Sources:** Commercial margarine, vegetable shortening, deep-fried fast food, microwave popcorn, and packaged baked goods (cookies, frostings, pies).
-* **Health Role:** Trans fats are considered the most hazardous dietary fat because they simultaneously raise LDL cholesterol and lower HDL cholesterol while promoting systemic vascular inflammation. Intake plummeted from **2.6% down to 0.5%** following the FDA's mandatory labeling rule in 2006 and the subsequent ban on partially hydrogenated oils.
+* **Healthy Guideline:** Limit to **<1%** of daily calories (ideally as close to **0%** as practically possible).
+* **Current Intake vs. Guideline:** Intake dropped dramatically from **2.6% down to 0.3%**, successfully meeting the public health target following mandatory labeling and FDA bans.
 
 :::
 
 ## Key Takeaways
 
-1. **A Major Public Health Victory:** The near-elimination of industrial trans fat from the food supply demonstrates that regulatory and labeling policies can effectively transform the American diet.
-2. **Persistent Saturated Fat Surplus:** Despite decades of dietary guidelines recommending that saturated fat intake stay below 10% of calories, adult consumption remains at **~11.9%**.
-3. **The Rise of Seed and Vegetable Oils:** Polyunsaturated fat intake has steadily expanded, reflecting the widespread presence of commercial soybean and vegetable oils in modern processed foods.
+1. **A Major Public Health Victory:** The near-elimination of industrial trans fat (<1% limit achieved) demonstrates the efficacy of federal food policy.
+2. **Persistent Saturated Fat Surplus:** Saturated fat continues to exceed the healthy limit of 10%, averaging ~11.8% of daily energy intake.
+3. **Room for MUFA Growth:** Health-promoting monounsaturated fats remain at ~13%, below the optimal target of ≥15%.
+4. **PUFAs Within Target:** Polyunsaturated fats have expanded to 8.4%, remaining within the recommended 5%–10% AMDR window.
