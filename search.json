@@ -35,6 +35,27 @@
     "text": "The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?\nIf caloric sweetener intake has fallen since 1999, why have U.S. rates of adult obesity and type 2 diabetes continued to climb? Public health researchers and epidemiologists point to several key factors:\n\nTotal Caloric Intake & Ultra-Processed Foods: While Americans cut back on sugary drinks, those calories were largely replaced by refined carbohydrates and fats from ultra-processed snacks, fast food, and prepared meals.\nBaseline Sugar Intake Is Still Too High: Although per capita sweetener availability dropped from 154 to 123 pounds per year, this still translates to roughly 17 teaspoons of added sugar per day—nearly double the American Heart Association’s recommended upper limit of 6 to 9 teaspoons.\nThe Cumulative “Lag Effect”: Chronic conditions like insulin resistance and type 2 diabetes develop over decades of metabolic strain. Reductions in sweetener consumption today will take years or decades to show up as lower disease prevalence in adult populations.\nDeclines in Daily Physical Activity: More desk-bound occupations, increased screen time, and car-dependent infrastructure have lowered average daily energy expenditure."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Name: Samuel Sammartano\nEmail: Samuelsammartano2@gmail.com\nGitHub: github.com/Sam-martano\nProject Repository: github.com/Sam-martano/food\nInstitution: New College of Florida"
+  },
+  {
+    "objectID": "about.html#about-the-author",
+    "href": "about.html#about-the-author",
+    "title": "About",
+    "section": "",
+    "text": "Name: Samuel Sammartano\nEmail: Samuelsammartano2@gmail.com\nGitHub: github.com/Sam-martano\nProject Repository: github.com/Sam-martano/food\nInstitution: New College of Florida"
+  },
+  {
+    "objectID": "about.html#data-sources",
+    "href": "about.html#data-sources",
+    "title": "About",
+    "section": "Data Sources",
+    "text": "Data Sources\nThis project analyzes dietary patterns and health metrics using continuous survey data from the National Health and Nutrition Examination Survey (NHANES) conducted by the CDC’s National Center for Health Statistics, alongside annual sweetener delivery datasets from the USDA Economic Research Service (ERS). Detailed macronutrient quality and fat subtype trends across 1999–2023 were evaluated using NHANES 24-hour dietary recalls from the USDA What We Eat in America (WWEIA) dietary assessment protocol and public health methodology established in JAMA (Shan et al., 2019)."
+  },
+  {
     "objectID": "fats.html",
     "href": "fats.html",
     "title": "Fats",
