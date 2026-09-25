@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "carbs-and-fats.html",
-    "href": "carbs-and-fats.html",
-    "title": "Carbs and Fats",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "US Health & Nutrition Trends (1999–2023)",
     "section": "",
-    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories."
+    "text": "Diet and nutrition play a central role in determining long-term health outcomes. When diets are heavily reliant on ultra-processed foods—which are often high in added sugars, unhealthy fats, and sodium—they contribute to excess weight gain and substantially elevate the risk of chronic conditions such as type 2 diabetes and hypertension. Conversely, diets rich in whole, minimally processed foods provide essential nutrients and fiber that support a healthy weight and protect metabolic function. The visualizations below draw on data from the National Health and Nutrition Examination Survey (NHANES) to examine how changes in American dietary habits connect to trends in body mass index (BMI), adult obesity, and chronic disease over the last two decades."
   },
   {
-    "objectID": "carbs-and-fats.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
-    "href": "carbs-and-fats.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
-    "title": "Carbs and Fats",
-    "section": "",
-    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories."
-  },
-  {
-    "objectID": "carbs-and-fats.html#key-insights",
-    "href": "carbs-and-fats.html#key-insights",
-    "title": "Carbs and Fats",
-    "section": "Key Insights",
-    "text": "Key Insights\n\nPersistent Imbalance: Even with a modest decline in added sugars, low-quality refined carbohydrates still account for over 40% of daily calories, whereas unrefined, high-quality carbohydrates make up under 9%.\nThe Whole-Grain Deficit: Within high-quality carbohydrates, energy intake from whole grains rose from 2.0% to 2.7%, meaning that the overwhelming majority of grain foods consumed in the United States remain refined white flours.\nImplications for Metabolic Health: Because refined carbs digest quickly and produce elevated glycemic responses, their dominance in the American diet continues to drive insulin resistance and excess energy intake."
+    "objectID": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
+    "href": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
+    "title": "US Health & Nutrition Trends (1999–2023)",
+    "section": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)",
+    "text": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)\nThis visualization tracks the proportion of daily caloric intake derived from ultra-processed foods (red) compared to unprocessed or minimally processed foods (green) across all survey cycles from 1999 through 2023 based on NHANES dietary recall data.\n\n\n\n\n\n\nFrom 1999 to 2018, daily caloric intake from ultra-processed food (red) rose from 52.8% to 57.0%, while unprocessed food (green) dropped from 33.5% to 27.4%, followed by a post-pandemic shift toward whole foods in 2021–2023."
   },
   {
     "objectID": "sugar.html",
@@ -40,6 +33,20 @@
     "title": "Sugar",
     "section": "The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?",
     "text": "The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?\nIf caloric sweetener intake has fallen since 1999, why have U.S. rates of adult obesity and type 2 diabetes continued to climb? Public health researchers and epidemiologists point to several key factors:\n\nTotal Caloric Intake & Ultra-Processed Foods: While Americans cut back on sugary drinks, those calories were largely replaced by refined carbohydrates and fats from ultra-processed snacks, fast food, and prepared meals.\nBaseline Sugar Intake Is Still Too High: Although per capita sweetener availability dropped from 154 to 123 pounds per year, this still translates to roughly 17 teaspoons of added sugar per day—nearly double the American Heart Association’s recommended upper limit of 6 to 9 teaspoons.\nThe Cumulative “Lag Effect”: Chronic conditions like insulin resistance and type 2 diabetes develop over decades of metabolic strain. Reductions in sweetener consumption today will take years or decades to show up as lower disease prevalence in adult populations.\nDeclines in Daily Physical Activity: More desk-bound occupations, increased screen time, and car-dependent infrastructure have lowered average daily energy expenditure."
+  },
+  {
+    "objectID": "fats.html",
+    "href": "fats.html",
+    "title": "Fats",
+    "section": "",
+    "text": "This page explores national trends in dietary fat consumption over time, including saturated, monounsaturated, and polyunsaturated fats."
+  },
+  {
+    "objectID": "fats.html#overview",
+    "href": "fats.html#overview",
+    "title": "Fats",
+    "section": "",
+    "text": "This page explores national trends in dietary fat consumption over time, including saturated, monounsaturated, and polyunsaturated fats."
   },
   {
     "objectID": "explanation.html",
@@ -70,17 +77,31 @@
     "text": "Obesity Distribution by Age and Weight\nThis graph maps thousands of adult survey participants from the NHANES dataset across age and weight. Points in red represent individuals recorded as obese (\\(\\text{BMI} \\ge 30\\)), while points in green represent individuals who are not obese."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "US Health & Nutrition Trends (1999–2023)",
+    "objectID": "carbs.html",
+    "href": "carbs.html",
+    "title": "Carbs",
     "section": "",
-    "text": "Diet and nutrition play a central role in determining long-term health outcomes. When diets are heavily reliant on ultra-processed foods—which are often high in added sugars, unhealthy fats, and sodium—they contribute to excess weight gain and substantially elevate the risk of chronic conditions such as type 2 diabetes and hypertension. Conversely, diets rich in whole, minimally processed foods provide essential nutrients and fiber that support a healthy weight and protect metabolic function. The visualizations below draw on data from the National Health and Nutrition Examination Survey (NHANES) to examine how changes in American dietary habits connect to trends in body mass index (BMI), adult obesity, and chronic disease over the last two decades."
+    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories.\n\n\n\n\n\n\n\n\n\n\nRefined CarbohydratesUnrefined Carbohydrates\n\n\nRefined carbohydrates have been processed to remove the fiber-rich bran and nutrient-dense germ, leaving only fast-digesting starch. This causes rapid surges in blood glucose and insulin.\nEveryday Examples:\n\nBreads & Bakery: White sandwich bread, bagels, burger buns, croissants, flour tortillas, and pizza crust.\nGrains & Pasta: White rice, traditional pasta, couscous, and instant noodles.\nSnacks & Crackers: Pretzels, saltines, buttery snack crackers, and potato or corn chips.\nBreakfast Items: Sugary boxed cereals, toaster pastries, pancakes, and waffles made with white flour.\nDesserts & Sweets: Cookies, donuts, cakes, muffins, brownies, and pastries.\nLiquid & Added Sugars: Sodas, sweetened iced teas, fruit juice concentrates, candy, and syrups.\n\n\n\nUnrefined carbohydrates are whole foods that keep their natural fiber, vitamins, and minerals intact. Their fiber slows digestion, supporting gut health, insulin sensitivity, and long-lasting energy.\nEveryday Examples:\n\nWhole Grains: Steel-cut or rolled oats, brown rice, wild rice, quinoa, barley, farro, and 100% whole-wheat bread/pasta.\nLegumes & Beans: Lentils, black beans, chickpeas, kidney beans, pinto beans, and edamame.\nRoot & Starchy Vegetables: Sweet potatoes, russet or gold potatoes (with skin), butternut squash, acorn squash, and corn.\nWhole Fruits: Apples, berries (blueberries, raspberries, blackberries), pears, and oranges (which provide fiber missing in juice).\nSeeds & Ancient Grains: Chia seeds, flaxseed, buckwheat, and amaranth."
   },
   {
-    "objectID": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
-    "href": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
-    "title": "US Health & Nutrition Trends (1999–2023)",
-    "section": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)",
-    "text": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)\nThis visualization tracks the proportion of daily caloric intake derived from ultra-processed foods (red) compared to unprocessed or minimally processed foods (green) across all survey cycles from 1999 through 2023 based on NHANES dietary recall data.\n\n\n\n\n\n\nFrom 1999 to 2018, daily caloric intake from ultra-processed food (red) rose from 52.8% to 57.0%, while unprocessed food (green) dropped from 33.5% to 27.4%, followed by a post-pandemic shift toward whole foods in 2021–2023."
+    "objectID": "carbs.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
+    "href": "carbs.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
+    "title": "Carbs",
+    "section": "",
+    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories.\n\n\n\n\n\n\n\n\n\n\nRefined CarbohydratesUnrefined Carbohydrates\n\n\nRefined carbohydrates have been processed to remove the fiber-rich bran and nutrient-dense germ, leaving only fast-digesting starch. This causes rapid surges in blood glucose and insulin.\nEveryday Examples:\n\nBreads & Bakery: White sandwich bread, bagels, burger buns, croissants, flour tortillas, and pizza crust.\nGrains & Pasta: White rice, traditional pasta, couscous, and instant noodles.\nSnacks & Crackers: Pretzels, saltines, buttery snack crackers, and potato or corn chips.\nBreakfast Items: Sugary boxed cereals, toaster pastries, pancakes, and waffles made with white flour.\nDesserts & Sweets: Cookies, donuts, cakes, muffins, brownies, and pastries.\nLiquid & Added Sugars: Sodas, sweetened iced teas, fruit juice concentrates, candy, and syrups.\n\n\n\nUnrefined carbohydrates are whole foods that keep their natural fiber, vitamins, and minerals intact. Their fiber slows digestion, supporting gut health, insulin sensitivity, and long-lasting energy.\nEveryday Examples:\n\nWhole Grains: Steel-cut or rolled oats, brown rice, wild rice, quinoa, barley, farro, and 100% whole-wheat bread/pasta.\nLegumes & Beans: Lentils, black beans, chickpeas, kidney beans, pinto beans, and edamame.\nRoot & Starchy Vegetables: Sweet potatoes, russet or gold potatoes (with skin), butternut squash, acorn squash, and corn.\nWhole Fruits: Apples, berries (blueberries, raspberries, blackberries), pears, and oranges (which provide fiber missing in juice).\nSeeds & Ancient Grains: Chia seeds, flaxseed, buckwheat, and amaranth."
+  },
+  {
+    "objectID": "carbs.html#key-insights",
+    "href": "carbs.html#key-insights",
+    "title": "Carbs",
+    "section": "Key Insights",
+    "text": "Key Insights\n\nPersistent Imbalance: Even with a modest decline in added sugars, low-quality refined carbohydrates still account for over 40% of daily calories, whereas unrefined, high-quality carbohydrates make up under 9%.\nThe Whole-Grain Deficit: Within high-quality carbohydrates, energy intake from whole grains rose from 2.0% to 2.7%, meaning that the overwhelming majority of grain foods consumed in the United States remain refined white flours.\nImplications for Metabolic Health: Because refined carbs digest quickly and produce elevated glycemic responses, their dominance in the American diet continues to drive insulin resistance and excess energy intake."
+  },
+  {
+    "objectID": "carbs.html#health-effects-of-refined-carbohydrates",
+    "href": "carbs.html#health-effects-of-refined-carbohydrates",
+    "title": "Carbs",
+    "section": "Health Effects of Refined Carbohydrates",
+    "text": "Health Effects of Refined Carbohydrates\nWhile refined carbohydrates serve specific functional purposes, extensive epidemiological and clinical evidence demonstrates that high daily intake carries significant metabolic risks.\n\nThe Limited Benefits (“The Good”)\n\nRapid Fuel for High-Intensity Exercise: Because they break down into glucose almost immediately, refined carbs are effective for quickly replenishing muscle glycogen during intense athletic training or treating acute low blood sugar (hypoglycemia).\nEnrichment & Extended Shelf Life: In the U.S., refined flours are fortified with essential micronutrients (iron, folic acid, and B vitamins), helping reduce deficiency diseases like neural tube defects, while offering affordable, shelf-stable staples.\n\n\n\nThe Metabolic Risks (“The Bad”)\n\nBlood Sugar Spikes & Insulin Resistance: Stripped of fiber, refined carbs trigger rapid surges in blood glucose. The pancreas must pump out large amounts of insulin to clear the sugar, which over time desensitizes cells and causes chronic insulin resistance.\nElevated Risk of Type 2 Diabetes: Consistent consumption of high-glycemic-load foods puts prolonged stress on the endocrine system, directly correlating with higher rates of adult-onset diabetes.\nRebound Hunger & Weight Gain: Without fiber or protein to slow gastric emptying, blood sugar drops quickly after a spike (“crash”), triggering rebound hunger, cravings, and involuntary caloric overconsumption.\nDyslipidemia & Cardiovascular Strain: High refined carb diets accelerate fat production in the liver (de novo lipogenesis), driving up circulating triglycerides, lowering protective HDL cholesterol, and promoting artery-clogging small, dense LDL particles.\nSystemic Inflammation: Chronic post-meal glucose spikes increase oxidative stress and elevate inflammatory markers like C-reactive protein (CRP), which contributes to arterial and metabolic damage."
   }
 ]
