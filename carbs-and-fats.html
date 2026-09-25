@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Explanation – NHANES Obesity Trends</title>
+<title>Carbs and Fats – NHANES Obesity Trends</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -74,35 +74,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -128,7 +99,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./explanation.html" aria-current="page"> 
+    <a class="nav-link" href="./explanation.html"> 
 <span class="menu-text">Explanation</span></a>
   </li>  
   <li class="nav-item">
@@ -136,7 +107,7 @@ window.Quarto = {
 <span class="menu-text">Sugar</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./carbs-and-fats.html"> 
+    <a class="nav-link active" href="./carbs-and-fats.html" aria-current="page"> 
 <span class="menu-text">Carbs and Fats</span></a>
   </li>  
 </ul>
@@ -156,7 +127,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Explanation</h1>
+<h1 class="title">Carbs and Fats</h1>
 </div>
 
 
@@ -173,52 +144,31 @@ window.Quarto = {
 </header>
 
 
-<section id="first-glances-at-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="first-glances-at-the-data">First Glances at the Data</h2>
-<p>This page explores the trends observed in our dietary data, focusing on shifts in American nutrition and health outcomes.</p>
-</section>
-<section id="why-did-ultra-processed-food-consumption-decline-after-2018" class="level2">
-<h2 class="anchored" data-anchor-id="why-did-ultra-processed-food-consumption-decline-after-2018">Why Did Ultra-Processed Food Consumption Decline After 2018?</h2>
+<section id="carbohydrate-quality-refined-vs.-unrefined-19992016" class="level2">
+<h2 class="anchored" data-anchor-id="carbohydrate-quality-refined-vs.-unrefined-19992016">Carbohydrate Quality: Refined vs.&nbsp;Unrefined (1999–2016)</h2>
+<p>In nutritional epidemiology, carbohydrates are evaluated by their quality:</p>
+<ul>
+<li><strong>Low-Quality / Refined Carbohydrates:</strong> Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.</li>
+<li><strong>High-Quality / Unrefined Carbohydrates:</strong> Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.</li>
+</ul>
+<p>The visualization below uses data from nine cycles of the <strong>National Health and Nutrition Examination Survey (NHANES)</strong> published in <a href="https://doi.org/10.1001/jama.2019.13776"><em>JAMA</em></a>, tracking how adult intake has shifted as a share of daily calories.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="explanation_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="carbs-and-fats_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>According to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023.</p>
-<p>Researchers and public health analysts attribute this recent decline to several intersecting factors:</p>
-<section id="shift-toward-home-cooking-during-the-covid-19-pandemic" class="level3">
-<h3 class="anchored" data-anchor-id="shift-toward-home-cooking-during-the-covid-19-pandemic">1. Shift Toward Home Cooking During the COVID-19 Pandemic</h3>
-<p>During 2020 and 2021, pandemic-related lockdowns, remote work, and restaurant closures led millions of households to prepare meals at home. Cooking from scratch inherently relies more on unprocessed and minimally processed ingredients (such as produce, eggs, whole grains, and raw meats) compared to commercial convenience meals and fast food.</p>
 </section>
-<section id="growing-awareness-of-ultra-processed-foods" class="level3">
-<h3 class="anchored" data-anchor-id="growing-awareness-of-ultra-processed-foods">2. Growing Awareness of Ultra-Processed Foods</h3>
-<p>The term “ultra-processed food” (based on the NOVA food classification system) gained widespread public recognition following high-profile research—most notably the 2019 National Institutes of Health (NIH) randomized controlled trial by Dr.&nbsp;Kevin Hall and colleagues. This study provided direct clinical evidence that ultra-processed diets lead to excess calorie intake and weight gain, sparking extensive media coverage and consumer interest in whole foods.</p>
-</section>
-<section id="food-inflation-and-economic-pressures" class="level3">
-<h3 class="anchored" data-anchor-id="food-inflation-and-economic-pressures">3. Food Inflation and Economic Pressures</h3>
-<p>From 2021 to 2023, high inflation sharply increased the prices of packaged snack foods, ready-to-eat meals, and restaurant dining. Faced with tighter food budgets, many consumers substituted expensive pre-packaged items with less costly pantry staples (such as beans, rice, and fresh or frozen vegetables).</p>
-</section>
-<section id="updated-nutrition-labeling" class="level3">
-<h3 class="anchored" data-anchor-id="updated-nutrition-labeling">4. Updated Nutrition Labeling</h3>
-<p>The FDA’s updated Nutrition Facts label—which required companies to clearly disclose “Added Sugars”—took full effect for major food manufacturers around 2020–2021. This greater transparency made it easier for consumers to identify heavily processed foods and encouraged manufacturers to reformulate certain product lines.</p>
-</section>
-</section>
-<section id="obesity-distribution-by-age-and-weight" class="level2">
-<h2 class="anchored" data-anchor-id="obesity-distribution-by-age-and-weight">Obesity Distribution by Age and Weight</h2>
-<p>This graph maps thousands of adult survey participants from the NHANES dataset across age and weight. Points in <strong>red</strong> represent individuals recorded as obese (<span class="math inline">\(\text{BMI} \ge 30\)</span>), while points in <strong>green</strong> represent individuals who are not obese.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="explanation_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="key-insights" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights">Key Insights</h2>
+<ol type="1">
+<li><strong>Persistent Imbalance:</strong> Even with a modest decline in added sugars, low-quality refined carbohydrates still account for over <strong>40% of daily calories</strong>, whereas unrefined, high-quality carbohydrates make up under <strong>9%</strong>.</li>
+<li><strong>The Whole-Grain Deficit:</strong> Within high-quality carbohydrates, energy intake from whole grains rose from <strong>2.0% to 2.7%</strong>, meaning that the overwhelming majority of grain foods consumed in the United States remain refined white flours.</li>
+<li><strong>Implications for Metabolic Health:</strong> Because refined carbs digest quickly and produce elevated glycemic responses, their dominance in the American diet continues to drive insulin resistance and excess energy intake.</li>
+</ol>
 
 
 </section>

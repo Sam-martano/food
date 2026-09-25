@@ -1,10 +1,45 @@
 [
   {
-    "objectID": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
-    "href": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
-    "title": "US Health & Nutrition Trends (1999–2023)",
-    "section": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)",
-    "text": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)\nThis visualization tracks the proportion of daily caloric intake derived from ultra-processed foods (red) compared to unprocessed or minimally processed foods (green) across all survey cycles from 1999 through 2023 based on NHANES dietary recall data.\n\n\n\n\n\n\nFrom 1999 to 2018, daily caloric intake from ultra-processed food (red) rose from 52.8% to 57.0%, while unprocessed food (green) dropped from 33.5% to 27.4%, followed by a post-pandemic shift toward whole foods in 2021–2023."
+    "objectID": "carbs-and-fats.html",
+    "href": "carbs-and-fats.html",
+    "title": "Carbs and Fats",
+    "section": "",
+    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories."
+  },
+  {
+    "objectID": "carbs-and-fats.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
+    "href": "carbs-and-fats.html#carbohydrate-quality-refined-vs.-unrefined-19992016",
+    "title": "Carbs and Fats",
+    "section": "",
+    "text": "In nutritional epidemiology, carbohydrates are evaluated by their quality:\n\nLow-Quality / Refined Carbohydrates: Refined grains (white bread, pasta, white rice), added sugars, fruit juices, and potatoes. These digest quickly and spike blood glucose and insulin.\nHigh-Quality / Unrefined Carbohydrates: Whole grains (oats, brown rice, whole wheat), whole fresh fruits, legumes, and non-starchy vegetables. These provide dietary fiber, micronutrients, and slow, sustained digestion.\n\nThe visualization below uses data from nine cycles of the National Health and Nutrition Examination Survey (NHANES) published in JAMA, tracking how adult intake has shifted as a share of daily calories."
+  },
+  {
+    "objectID": "carbs-and-fats.html#key-insights",
+    "href": "carbs-and-fats.html#key-insights",
+    "title": "Carbs and Fats",
+    "section": "Key Insights",
+    "text": "Key Insights\n\nPersistent Imbalance: Even with a modest decline in added sugars, low-quality refined carbohydrates still account for over 40% of daily calories, whereas unrefined, high-quality carbohydrates make up under 9%.\nThe Whole-Grain Deficit: Within high-quality carbohydrates, energy intake from whole grains rose from 2.0% to 2.7%, meaning that the overwhelming majority of grain foods consumed in the United States remain refined white flours.\nImplications for Metabolic Health: Because refined carbs digest quickly and produce elevated glycemic responses, their dominance in the American diet continues to drive insulin resistance and excess energy intake."
+  },
+  {
+    "objectID": "sugar.html",
+    "href": "sugar.html",
+    "title": "Sugar",
+    "section": "",
+    "text": "Data from the USDA Economic Research Service (ERS) Sugar and Sweeteners Yearbook tracks how caloric sweetener availability per person has shifted over the last two decades. While total consumption peaked around 1999, high-fructose corn syrup (HFCS) saw a steady drop, whereas refined cane and beet sugar remained relatively flat."
+  },
+  {
+    "objectID": "sugar.html#trends-in-u.s.-sweetener-consumption-19992023",
+    "href": "sugar.html#trends-in-u.s.-sweetener-consumption-19992023",
+    "title": "Sugar",
+    "section": "",
+    "text": "Data from the USDA Economic Research Service (ERS) Sugar and Sweeteners Yearbook tracks how caloric sweetener availability per person has shifted over the last two decades. While total consumption peaked around 1999, high-fructose corn syrup (HFCS) saw a steady drop, whereas refined cane and beet sugar remained relatively flat."
+  },
+  {
+    "objectID": "sugar.html#the-sugar-paradox-why-are-obesity-and-type-2-diabetes-still-rising",
+    "href": "sugar.html#the-sugar-paradox-why-are-obesity-and-type-2-diabetes-still-rising",
+    "title": "Sugar",
+    "section": "The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?",
+    "text": "The Sugar Paradox: Why Are Obesity and Type 2 Diabetes Still Rising?\nIf caloric sweetener intake has fallen since 1999, why have U.S. rates of adult obesity and type 2 diabetes continued to climb? Public health researchers and epidemiologists point to several key factors:\n\nTotal Caloric Intake & Ultra-Processed Foods: While Americans cut back on sugary drinks, those calories were largely replaced by refined carbohydrates and fats from ultra-processed snacks, fast food, and prepared meals.\nBaseline Sugar Intake Is Still Too High: Although per capita sweetener availability dropped from 154 to 123 pounds per year, this still translates to roughly 17 teaspoons of added sugar per day—nearly double the American Heart Association’s recommended upper limit of 6 to 9 teaspoons.\nThe Cumulative “Lag Effect”: Chronic conditions like insulin resistance and type 2 diabetes develop over decades of metabolic strain. Reductions in sweetener consumption today will take years or decades to show up as lower disease prevalence in adult populations.\nDeclines in Daily Physical Activity: More desk-bound occupations, increased screen time, and car-dependent infrastructure have lowered average daily energy expenditure."
   },
   {
     "objectID": "explanation.html",
@@ -14,8 +49,8 @@
     "text": "This page explores the trends observed in our dietary data, focusing on shifts in American nutrition and health outcomes."
   },
   {
-    "objectID": "explanation.html#overview",
-    "href": "explanation.html#overview",
+    "objectID": "explanation.html#first-glances-at-the-data",
+    "href": "explanation.html#first-glances-at-the-data",
     "title": "Explanation",
     "section": "",
     "text": "This page explores the trends observed in our dietary data, focusing on shifts in American nutrition and health outcomes."
@@ -25,6 +60,27 @@
     "href": "explanation.html#why-did-ultra-processed-food-consumption-decline-after-2018",
     "title": "Explanation",
     "section": "Why Did Ultra-Processed Food Consumption Decline After 2018?",
-    "text": "Why Did Ultra-Processed Food Consumption Decline After 2018?\nAccording to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023.\nResearchers and public health analysts attribute this recent decline to several intersecting factors:\n\n1. Shift Toward Home Cooking During the COVID-19 Pandemic\nDuring 2020 and 2021, pandemic-related lockdowns, remote work, and restaurant closures led millions of households to prepare meals at home. Cooking from scratch inherently relies more on unprocessed and minimally processed ingredients (such as produce, eggs, whole grains, and raw meats) compared to commercial convenience meals and fast food.\n\n\n2. Growing Awareness of Ultra-Processed Foods\nThe term “ultra-processed food” (based on the NOVA food classification system) gained widespread public recognition following high-profile research—most notably the 2019 National Institutes of Health (NIH) randomized controlled trial by Dr. Kevin Hall and colleagues. This study provided direct clinical evidence that ultra-processed diets lead to excess calorie intake and weight gain, sparking extensive media coverage and consumer interest in whole foods.\n\n\n3. Food Inflation and Economic Pressures\nFrom 2021 to 2023, high inflation sharply increased the prices of packaged snack foods, ready-to-eat meals, and restaurant dining. Faced with tighter food budgets, many consumers substituted expensive pre-packaged items with less costly pantry staples (such as beans, rice, and fresh or frozen vegetables).\n\n\n4. Updated Nutrition Labeling\nThe FDA’s updated Nutrition Facts label—which required companies to clearly disclose “Added Sugars”—took full effect for major food manufacturers around 2020–2021. This greater transparency made it easier for consumers to identify heavily processed foods and encouraged manufacturers to reformulate certain product lines."
+    "text": "Why Did Ultra-Processed Food Consumption Decline After 2018?\n\n\n\n\n\n\n\n\n\nAccording to NHANES dietary recall surveys, daily caloric intake from ultra-processed foods (UPFs) climbed steadily for nearly two decades, peaking around 57.0% in 2017–2018 before falling to approximately 53.0% by 2021–2023.\nResearchers and public health analysts attribute this recent decline to several intersecting factors:\n\n1. Shift Toward Home Cooking During the COVID-19 Pandemic\nDuring 2020 and 2021, pandemic-related lockdowns, remote work, and restaurant closures led millions of households to prepare meals at home. Cooking from scratch inherently relies more on unprocessed and minimally processed ingredients (such as produce, eggs, whole grains, and raw meats) compared to commercial convenience meals and fast food.\n\n\n2. Growing Awareness of Ultra-Processed Foods\nThe term “ultra-processed food” (based on the NOVA food classification system) gained widespread public recognition following high-profile research—most notably the 2019 National Institutes of Health (NIH) randomized controlled trial by Dr. Kevin Hall and colleagues. This study provided direct clinical evidence that ultra-processed diets lead to excess calorie intake and weight gain, sparking extensive media coverage and consumer interest in whole foods.\n\n\n3. Food Inflation and Economic Pressures\nFrom 2021 to 2023, high inflation sharply increased the prices of packaged snack foods, ready-to-eat meals, and restaurant dining. Faced with tighter food budgets, many consumers substituted expensive pre-packaged items with less costly pantry staples (such as beans, rice, and fresh or frozen vegetables).\n\n\n4. Updated Nutrition Labeling\nThe FDA’s updated Nutrition Facts label—which required companies to clearly disclose “Added Sugars”—took full effect for major food manufacturers around 2020–2021. This greater transparency made it easier for consumers to identify heavily processed foods and encouraged manufacturers to reformulate certain product lines."
+  },
+  {
+    "objectID": "explanation.html#obesity-distribution-by-age-and-weight",
+    "href": "explanation.html#obesity-distribution-by-age-and-weight",
+    "title": "Explanation",
+    "section": "Obesity Distribution by Age and Weight",
+    "text": "Obesity Distribution by Age and Weight\nThis graph maps thousands of adult survey participants from the NHANES dataset across age and weight. Points in red represent individuals recorded as obese (\\(\\text{BMI} \\ge 30\\)), while points in green represent individuals who are not obese."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "US Health & Nutrition Trends (1999–2023)",
+    "section": "",
+    "text": "Diet and nutrition play a central role in determining long-term health outcomes. When diets are heavily reliant on ultra-processed foods—which are often high in added sugars, unhealthy fats, and sodium—they contribute to excess weight gain and substantially elevate the risk of chronic conditions such as type 2 diabetes and hypertension. Conversely, diets rich in whole, minimally processed foods provide essential nutrients and fiber that support a healthy weight and protect metabolic function. The visualizations below draw on data from the National Health and Nutrition Examination Survey (NHANES) to examine how changes in American dietary habits connect to trends in body mass index (BMI), adult obesity, and chronic disease over the last two decades."
+  },
+  {
+    "objectID": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
+    "href": "index.html#food-consumption-trends-ultra-processed-vs.-unprocessed",
+    "title": "US Health & Nutrition Trends (1999–2023)",
+    "section": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)",
+    "text": "Food Consumption Trends (Ultra-Processed vs. Unprocessed)\nThis visualization tracks the proportion of daily caloric intake derived from ultra-processed foods (red) compared to unprocessed or minimally processed foods (green) across all survey cycles from 1999 through 2023 based on NHANES dietary recall data.\n\n\n\n\n\n\nFrom 1999 to 2018, daily caloric intake from ultra-processed food (red) rose from 52.8% to 57.0%, while unprocessed food (green) dropped from 33.5% to 27.4%, followed by a post-pandemic shift toward whole foods in 2021–2023."
   }
 ]
