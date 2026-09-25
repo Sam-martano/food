@@ -210,3 +210,28 @@ Industrial trans fats are manufactured by bubbling hydrogen gas through liquid v
 2. **Persistent Saturated Fat Surplus:** Saturated fat continues to exceed the healthy limit of 10%, averaging ~11.8% of daily energy intake.
 3. **Room for MUFA Growth:** Health-promoting monounsaturated fats remain at ~13%, below the optimal target of ≥15%.
 4. **PUFAs Within Target:** Polyunsaturated fats have expanded to 8.4%, remaining within the recommended 5%–10% AMDR window.
+
+## Understanding Blood Lipids: LDL vs. HDL
+
+Because cholesterol is a fat-based molecule, it cannot dissolve in water-based bloodstream fluids on its own. To circulate, it must be packaged into spherical transport capsules made of lipids and proteins called **lipoproteins**.
+
+### LDL: Low-Density Lipoprotein ("Bad" Cholesterol)
+
+* **Biological Function:** LDL functions as a delivery vehicle, transporting cholesterol from the liver outward to peripheral cells throughout the body for membrane repair and steroid hormone production.
+* **Why It Is Considered "Bad":** When LDL concentrations become excessively high, surplus particles linger in circulation and penetrate the endothelium (inner lining) of arteries. There, they oxidize, prompting immune cells to engulf them and transform into fatty foam cells. Over decades, this process forms hardened atherosclerotic plaques, narrowing arteries and dramatically raising the risk of heart attacks and strokes.
+
+### HDL: High-Density Lipoprotein ("Good" Cholesterol)
+
+* **Biological Function:** HDL acts as the body's cardiovascular maintenance crew through a mechanism known as **reverse cholesterol transport**. It scavenges surplus cholesterol from tissues and vessel walls and escorts it back to the liver for recycling or excretion through bile.
+* **Why It Is Considered "Good":** Higher circulating HDL levels help keep arterial pathways clear of lipid deposits, provide anti-inflammatory and antioxidant defenses to blood vessel walls, and protect against cardiovascular events.
+
+### Key Differences at a Glance
+
+| Metric | LDL (Low-Density Lipoprotein) | HDL (High-Density Lipoprotein) |
+| :--- | :--- | :--- |
+| **Common Name** | "Bad" cholesterol | "Good" cholesterol |
+| **Composition** | High lipid content (~50% cholesterol, ~25% protein) | High protein content (~50% protein, ~20% cholesterol) |
+| **Direction of Flow** | Liver $\rightarrow$ Peripheral tissues and arterial walls | Blood vessels and tissues $\rightarrow$ Liver (clearing excess) |
+| **Vascular Effect** | Promotes arterial inflammation and plaque buildup | Clears excess cholesterol and protects vessel lining |
+| **Dietary Fat Impact** | Increased by **saturated** and **trans fats** | Preserved/boosted by **MUFAs**; suppressed by **trans fats** |
+
