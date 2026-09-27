@@ -6,6 +6,26 @@ execute:
   warning: false
 ---
 
+<style>
+body {
+  background-color: #faf7f2;
+  background-image: linear-gradient(rgba(252, 249, 245, 0.80), rgba(252, 249, 245, 0.80)),
+                    url("images/carbs-scroll-bg.jpg");
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+}
+
+#quarto-document-content {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  padding: 2.25rem 2.75rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+</style>
+
 ## Carbohydrate Quality: Refined vs. Unrefined (1999–2023)
 
 In nutritional epidemiology, carbohydrates are evaluated by their quality:
