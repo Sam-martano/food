@@ -112,6 +112,13 @@
     "text": "Obesity Distribution by Age and Weight\nThis graph maps thousands of adult survey participants from the NHANES dataset across age and weight. Points in red represent individuals recorded as obese (\\(\\text{BMI} \\ge 30\\)), while points in green represent individuals who are not obese."
   },
   {
+    "objectID": "explanation.html#non-dietary-factors-influencing-obesity-rates",
+    "href": "explanation.html#non-dietary-factors-influencing-obesity-rates",
+    "title": "Explanation",
+    "section": "Non-Dietary Factors Influencing Obesity Rates",
+    "text": "Non-Dietary Factors Influencing Obesity Rates\nWhile diet and caloric intake are major drivers, obesity is a multifactorial condition influenced by several physiological, behavioral, and environmental determinants:\n\n1. Physical Inactivity and Sedentary Lifestyles\nModern occupations, screen time, and car-dependent transportation have substantially decreased baseline physical activity. Lower energy expenditure reduces metabolic rate and impairs glucose regulation, increasing the likelihood of excess weight gain over time.\n\n\n2. Sleep Deficiency and Circadian Disruption\nChronic sleep deprivation alters key metabolic hormones—suppressing leptin (the satiety signal) while increasing ghrelin (the hunger stimulant). Poor sleep quality also impairs insulin sensitivity and raises daytime fatigue, discouraging physical activity.\n\n\n3. Chronic Stress and Hormonal Imbalances\nProlonged psychological stress triggers sustained release of cortisol, a hormone that promotes abdominal fat accumulation and increases cravings for energy-dense foods. Endocrine disruptors and hormonal shifts can also influence fat storage.\n\n\n4. Genetics and Epigenetic Factors\nGenetic variation affects baseline metabolic rates, fat distribution, and neurochemical pathways governing appetite and satiety. Epigenetic mechanisms can also alter metabolic set points across generations.\n\n\n5. Built Environment and Socioeconomic Status\nCommunities with limited walkable infrastructure, fewer safe recreational spaces, higher poverty rates, and unequal access to healthcare experience elevated obesity risks independent of individual dietary choices."
+  },
+  {
     "objectID": "carbs.html",
     "href": "carbs.html",
     "title": "Carbs",
