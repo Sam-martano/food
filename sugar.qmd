@@ -6,6 +6,26 @@ execute:
   warning: false
 ---
 
+<style>
+body {
+  background-color: #fff8f3;
+  background-image: linear-gradient(rgba(255, 248, 244, 0.82), rgba(255, 248, 244, 0.82)),
+                    url("images/sugar-scroll-bg.jpg");
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-attachment: scroll;
+}
+
+#quarto-document-content {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  padding: 2.25rem 2.75rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+</style>
+
 ## Trends in U.S. Sweetener Consumption (1999–2023)
 
 Data from the **USDA Economic Research Service (ERS) Sugar and Sweeteners Yearbook** tracks how caloric sweetener availability per person has shifted over the last two decades. While total consumption peaked around 1999, high-fructose corn syrup (HFCS) saw a steady drop, whereas refined cane and beet sugar remained relatively flat.
