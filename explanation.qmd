@@ -38,18 +38,18 @@ food_trends <- tibble(
   )
 )
 
-# Key milestone points: 1999 start, 2017-2018 peak, and 2021-2023 latest
-key_points <- food_trends |>
-  filter(year %in% c(1999.5, 2017.5, 2022.5))
-
 ggplot(food_trends, aes(x = year, y = rate, color = food_type)) +
   geom_line(aes(group = food_type), linewidth = 1.1) +
   geom_point(size = 2.5) +
   geom_text(
-    data = key_points,
-    aes(label = sprintf("%.1f%%", rate)),
-    vjust = if_else(key_points$food_type == "Ultra-Processed Food", -1.2, 1.8),
-    size = 3.3,
+    aes(
+      label = sprintf("%.1f%%", rate),
+      # Place UPF percentages above and unprocessed percentages below the points
+      vjust = if_else(food_type == "Ultra-Processed Food", -1.2, 2.0),
+      # Offset the 2017–2020 point slightly right so it does not crowd the 2017–2018 peak
+      hjust = if_else(year == 2018.5, -0.3, 0.5)
+    ),
+    size = 2.8,
     fontface = "bold",
     show.legend = FALSE
   ) +
@@ -112,11 +112,13 @@ nhanes_sample <- NHANES |>
   distinct(ID, .keep_all = TRUE) |>
   filter(Age >= 20, !is.na(Weight), !is.na(BMI)) |>
   mutate(
+    # Convert weight from kilograms to pounds (1 kg ≈ 2.20462 lbs)
+    weight_lbs = Weight * 2.20462,
     status = if_else(BMI >= 30, "Obese", "Not Obese"),
     status = factor(status, levels = c("Obese", "Not Obese"))
   )
 
-ggplot(nhanes_sample, aes(x = Age, y = Weight, color = status)) +
+ggplot(nhanes_sample, aes(x = Age, y = weight_lbs, color = status)) +
   geom_point(alpha = 0.5, size = 1.6) +
   scale_color_manual(
     values = c("Obese" = "#d9534f", "Not Obese" = "#2e7d32")
@@ -126,14 +128,14 @@ ggplot(nhanes_sample, aes(x = Age, y = Weight, color = status)) +
     limits = c(20, 80)
   ) +
   scale_y_continuous(
-    breaks = round(seq(40, 220, length.out = 10)),
-    limits = c(35, 235)
+    breaks = seq(100, 500, by = 50),
+    limits = c(75, 525)
   ) +
   labs(
     title = "Adult Obesity Status by Age and Weight",
     subtitle = "NHANES Survey Participants (Red = Obese, Green = Not Obese)",
     x = "Age (Years)",
-    y = "Weight (kg)",
+    y = "Weight (lbs)",
     color = "Status"
   ) +
   theme_minimal() +
@@ -143,3 +145,21 @@ ggplot(nhanes_sample, aes(x = Age, y = Weight, color = status)) +
   )
 ```
 
+## Non-Dietary Factors Influencing Obesity Rates
+
+While diet and caloric intake are major drivers, obesity is a multifactorial condition influenced by several physiological, behavioral, and environmental determinants:
+
+### 1. Physical Inactivity and Sedentary Lifestyles
+Modern occupations, screen time, and car-dependent transportation have substantially decreased baseline physical activity. Lower energy expenditure reduces metabolic rate and impairs glucose regulation, increasing the likelihood of excess weight gain over time.
+
+### 2. Sleep Deficiency and Circadian Disruption
+Chronic sleep deprivation alters key metabolic hormones—suppressing leptin (the satiety signal) while increasing ghrelin (the hunger stimulant). Poor sleep quality also impairs insulin sensitivity and raises daytime fatigue, discouraging physical activity.
+
+### 3. Chronic Stress and Hormonal Imbalances
+Prolonged psychological stress triggers sustained release of cortisol, a hormone that promotes abdominal fat accumulation and increases cravings for energy-dense foods. Endocrine disruptors and hormonal shifts can also influence fat storage.
+
+### 4. Genetics and Epigenetic Factors
+Genetic variation affects baseline metabolic rates, fat distribution, and neurochemical pathways governing appetite and satiety. Epigenetic mechanisms can also alter metabolic set points across generations.
+
+### 5. Built Environment and Socioeconomic Status
+Communities with limited walkable infrastructure, fewer safe recreational spaces, higher poverty rates, and unequal access to healthcare experience elevated obesity risks independent of individual dietary choices.
