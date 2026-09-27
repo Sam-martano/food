@@ -17,7 +17,27 @@ library(plotly)
 library(NHANES)
 ```
 
-::: {.card .bg-light .p-4 .mb-4 .border-0 .shadow-sm}
+<style>
+body {
+  background-color: #f2f7f4;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #e8f5e9 0%, #e0ece4 50%, #edf2f7 100%);
+  border-radius: 12px;
+}
+
+.hero-card h3 {
+  color: #1b4332;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+</style>
+
+::: {.hero-card .card .p-4 .mb-4 .border-0 .shadow-sm}
+### Exploring 20 Years of American Nutrition & Health
+
 Diet and nutrition play a central role in determining long-term health outcomes. When diets are heavily reliant on ultra-processed foods—which are often high in added sugars, unhealthy fats, and sodium—they contribute to excess weight gain and substantially elevate the risk of chronic conditions such as type 2 diabetes and hypertension. Conversely, diets rich in whole, minimally processed foods provide essential nutrients and fiber that support a healthy weight and protect metabolic function. The visualizations below draw on data from the National Health and Nutrition Examination Survey (NHANES) to examine how changes in American dietary habits connect to trends in body mass index (BMI), adult obesity, and chronic disease over the last two decades.
 :::
 
